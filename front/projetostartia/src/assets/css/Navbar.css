@@ -1,0 +1,65 @@
+.Nav-img {
+    height: 10vh;
+}
+
+.Nav-div {
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+}
+
+.Nav-div li {
+    padding: 1vw;
+    list-style-type: none;
+    position: relative;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.Nav-div li:hover {
+    color: rgba(89, 148, 132, 1);
+}
+
+.Nav-div li::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: rgba(89, 148, 132, 1);
+    transition: all 0.3s ease;
+}
+
+.Nav-div li:hover::after {
+    width: 100%;
+}
+
+.Nav-button-fontsize {
+    border: none;
+    cursor: pointer;
+    height: 4vh;
+    width: 4vh;
+    margin: 1vh;
+    border-radius: 15px;
+}
+
+.Nav-button-perfil{
+    border: none;
+    border-radius: 20px;
+    background-color: rgb(89, 148, 132);
+    color: white;
+    height: 5vh;
+    width: 5vw;
+    cursor: pointer;
+}
+
+ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+nav {
+    padding: 2vh;
+}
