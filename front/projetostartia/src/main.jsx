@@ -6,8 +6,8 @@ import './index.css'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Home from './assets/routes/Home.jsx'
-import Teste from './assets/routes/Teste.jsx';
 import ErrorPage from './assets/routes/Error.jsx';
+import Cadastro from './assets/routes/Cadastro.jsx';
 
 const router = createBrowserRouter([
   {
@@ -20,8 +20,8 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/start-projeto/teste",
-        element: <Teste />,
+        path: "/start-projeto/cadastro",
+        element: <Cadastro />,
       },
     ],
   },

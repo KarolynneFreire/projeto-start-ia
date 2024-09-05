@@ -1,3 +1,7 @@
+li {
+    list-style-type: none;
+}
+
 .Nav-img {
     height: 10vh;
 }
@@ -8,19 +12,21 @@
     align-items: center;
 }
 
-.Nav-div li {
+
+.Nav-div-link {
     padding: 1vw;
     list-style-type: none;
     position: relative;
     text-decoration: none;
     cursor: pointer;
+    color: black;
 }
 
-.Nav-div li:hover {
+.Nav-div-link:hover {
     color: rgba(89, 148, 132, 1);
 }
 
-.Nav-div li::after {
+.Nav-div-link::after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -28,10 +34,10 @@
     width: 0%;
     height: 2px;
     background-color: rgba(89, 148, 132, 1);
-    transition: all 0.3s ease;
+    transition: all 0.3s ease-out;
 }
 
-.Nav-div li:hover::after {
+.Nav-div-link:hover::after {
     width: 100%;
 }
 
@@ -44,7 +50,12 @@
     border-radius: 15px;
 }
 
-.Nav-button-perfil{
+.Nav-button-fontsize:hover {
+    background-color: rgb(89, 148, 132);
+    transition: all 0.3s ease;
+}
+
+.Nav-button-perfil {
     border: none;
     border-radius: 20px;
     background-color: rgb(89, 148, 132);

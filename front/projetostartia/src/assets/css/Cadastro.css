@@ -1,0 +1,16 @@
+.Cadastro-inputs{
+    height: 2vh;
+    width: 22vw;
+    border: 3px solid rgba(194, 133, 12, 1);
+    border-radius: 5px;
+    text-align: justify;
+    padding: 1.5vh;
+}
+
+.Cadastro-inputs-select{
+    height: 6vh;
+    width: 23.5vw;
+    border: 3px solid rgba(194, 133, 12, 1);
+    border-radius: 5px;
+    padding: 1.5vh;
+}
