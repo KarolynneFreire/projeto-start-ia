@@ -1,42 +1,62 @@
-.Cadastro-inputs{
+.Cadastro-inputs {
     height: 5vh;
     width: 23vw;
     border: 3px solid rgba(194, 133, 12, 1);
     border-radius: 5px;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
 }
 
-.Cadastro-inputs-select{
+.Cadastro-inputs-select {
     height: 6vh;
     width: 23.5vw;
     border: 3px solid rgba(194, 133, 12, 1);
     border-radius: 5px;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
 }
 
-h1{
+h1 {
     text-align: center;
     padding-top: 2vh;
 }
 
-p{
+p {
     text-align: center;
 }
 
-form span{
+form span {
     display: block;
     position: relative;
     width: 50%;
     height: 1.5vh;
     left: 25%;
-    background: rgb(139, 168, 160);
+    background: rgb(88, 143, 127);
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
 }
 
-.container{
+.container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
 
-.container-products{
+.container-products {
     display: grid;
     justify-content: space-around;
     justify-items: start;
+}
+
+.container-products p{
+    font-size: 10px;
+}
+
+.for-acad{ 
+    display: flex;
+    align-items: center;
+}
+
+input{
+    padding-left: 1vw;
+}
+
+select{
+    padding-left: 1vw;
 }
