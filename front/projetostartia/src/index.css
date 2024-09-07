@@ -1,0 +1,8 @@
+.gifSplash {
+    width: 100vw;           /* Define a largura do GIF para 100% da largura da viewport (100% da tela visível) */
+    height: 100vh;          /* Define a altura do GIF para 100% da altura da viewport (100% da tela visível) */
+    object-fit: cover;      /* Faz com que o GIF cubra toda a área definida (100% da largura e altura), mantendo a proporção e cortando se necessário para preencher a tela */
+    position: absolute;     /* Posiciona o GIF de forma absoluta, tirando-o do fluxo normal do documento */
+    top: 0;                 /* Posiciona o GIF no topo da viewport */
+    left: 0;                /* Posiciona o GIF à esquerda da viewport */
+}

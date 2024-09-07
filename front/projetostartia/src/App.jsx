@@ -1,24 +1,20 @@
-import { Outlet } from 'react-router-dom'
+import React from 'react';
+import { Outlet } from 'react-router-dom';
 
-import './App.css'
-import Navbar from "./assets/components/Navbar"
-
+import './App.css';
+import Navbar from './assets/components/Navbar';
+import Home from './assets/routes/Home';
 
 function App() {
-  const flow = {
-    "start": {
-      "message": "boa tarde !"
-    }
-  }
   return (
-    <>
-      <div>
-        <Navbar />
-        <Outlet />
-        <ChatBot flow={flow} />
-      </div>
-    </>
-  )
+    <div className="App">
+      <Navbar />
+      <Home />
+      <Outlet />
+      {/* Uncomment the following line to enable the ChatBot component */}
+      {/* <ChatBot flow={flow} /> */}
+    </div>
+  );
 }
 
-export default App
+export default App;

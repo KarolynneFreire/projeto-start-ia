@@ -16,13 +16,13 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "/start-projeto/",
+        path: "/start-projet/",
         element: <Home />,
       },
-      {
-        path: "/start-projeto/cadastro",
-        element: <Cadastro />,
-      },
+     // {
+     //   path: "/start-projeto/cadastro",
+     //   element: <Cadastro />,
+    //  },
     ],
   },
 ]);
