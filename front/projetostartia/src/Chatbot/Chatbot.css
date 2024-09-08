@@ -1,0 +1,100 @@
+/* Botão flutuante */
+.chatbot-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+/* Contêiner do chatbot */
+.chatbot-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 350px;
+  height: 500px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  z-index: 1001;
+  padding: 0; /* Removendo padding */
+  margin: 0; /* Removendo margem */
+}
+
+/* Cursor de movimentação */
+.chatbot-header {
+  cursor: move;
+  background-color: #00B2A9;
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px 10px 0 0;
+}
+
+/* Área de mensagens */
+.react-chatbot-kit-chat-message-container {
+  flex: 1;
+  overflow-y: auto; /* Garantindo a rolagem quando necessário */
+  padding: 10px;
+  margin: 0; /* Removendo qualquer margem interna */
+}
+
+/* Campo de entrada */
+.react-chatbot-kit-chat-input {
+  display: flex;
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  border-radius: 0 0 10px 10px;
+  margin: 0; /* Removendo qualquer margem no campo de entrada */
+}
+
+.react-chatbot-kit-chat-input input {
+  flex: 1;
+  border: none;
+  padding: 10px;
+  margin-right: 10px; /* Ajuste de margem entre o campo de texto e o botão */
+  border-radius: 10px;
+  outline: none;
+}
+
+.react-chatbot-kit-chat-input button {
+  background-color: #00B2A9;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  color: white;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+/* Remover qualquer excesso de largura à direita */
+.react-chatbot-kit-chat-container {
+  margin: 0;
+  padding: 0;
+  width: 100%; /* Garante que o chat ocupe toda a largura disponível */
+}
+
+.question-button {
+  background-color: #00b2a9;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 5px 0;
+  cursor: pointer;
+}
+
+.question-button:hover {
+  background-color: #008b7d;
+}
+
