@@ -1,7 +1,7 @@
 import React, { useState } from 'react'; // Corrigindo a importação de useState
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
-import ChatbotComponent from './Chatbot';  // Importando o chatbot
+import ChatbotComponent from './Chatbot/ChatbotComponent.jsx'; // Caminho corrigido
 import './App.css';
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
       <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
       
       {/* Adicionando o chatbot na página */}
-      <ChatbotComponent />
+      <ChatbotComponent /> {/* Certifique-se de que este componente está na pasta correta */}
     </>
   );
 }

@@ -12,7 +12,7 @@
 /* Contêiner do chatbot */
 .chatbot-container {
   position: fixed;
-  bottom: 20px;
+  bottom: 70px;
   right: 20px;
   width: 350px;
   height: 500px;
@@ -22,11 +22,11 @@
   display: flex;
   flex-direction: column;
   z-index: 1001;
-  padding: 0; /* Removendo padding */
-  margin: 0; /* Removendo margem */
+  padding: 0;
+  margin: 0;
 }
 
-/* Cursor de movimentação */
+/* Cabeçalho movível */
 .chatbot-header {
   cursor: move;
   background-color: #00B2A9;
@@ -42,9 +42,9 @@
 /* Área de mensagens */
 .react-chatbot-kit-chat-message-container {
   flex: 1;
-  overflow-y: auto; /* Garantindo a rolagem quando necessário */
+  overflow-y: auto;
   padding: 10px;
-  margin: 0; /* Removendo qualquer margem interna */
+  margin: 0;
 }
 
 /* Campo de entrada */
@@ -54,16 +54,17 @@
   padding: 10px;
   border-top: 1px solid #ddd;
   border-radius: 0 0 10px 10px;
-  margin: 0; /* Removendo qualquer margem no campo de entrada */
+  margin: 0;
 }
 
 .react-chatbot-kit-chat-input input {
   flex: 1;
   border: none;
   padding: 10px;
-  margin-right: 10px; /* Ajuste de margem entre o campo de texto e o botão */
+  margin-right: 10px;
   border-radius: 10px;
   outline: none;
+  color: black; /* Updated text color */
 }
 
 .react-chatbot-kit-chat-input button {
@@ -77,24 +78,9 @@
   margin-left: 10px;
 }
 
-/* Remover qualquer excesso de largura à direita */
+/* Remover largura extra */
 .react-chatbot-kit-chat-container {
   margin: 0;
   padding: 0;
-  width: 100%; /* Garante que o chat ocupe toda a largura disponível */
+  width: 100%;
 }
-
-.question-button {
-  background-color: #00b2a9;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 10px;
-  margin: 5px 0;
-  cursor: pointer;
-}
-
-.question-button:hover {
-  background-color: #008b7d;
-}
-

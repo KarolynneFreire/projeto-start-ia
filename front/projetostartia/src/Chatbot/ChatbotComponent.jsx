@@ -17,18 +17,18 @@ function ChatbotComponent() {
 
   return (
     <div>
-      {/* Botão flutuante no canto inferior direito */}
+      {/* Floating bot icon */}
       {!isOpen && (
         <button className="chatbot-button" onClick={toggleChatbot}>
           <img src={botIcon} alt="Bot Icon" style={{ width: '50px', height: '50px' }} />
         </button>
       )}
 
-      {/* Chatbot com Draggable para permitir movimentação */}
+      {/* Draggable chatbot container */}
       {isOpen && (
         <Draggable>
           <div id="chatbot-container" className="chatbot-container">
-            <div className="chatbot-header"> 
+            <div className="chatbot-header">
               Conversa com Assistente
               <button className="close-button" onClick={toggleChatbot}>X</button>
             </div>

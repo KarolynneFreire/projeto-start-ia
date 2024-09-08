@@ -1,15 +1,16 @@
-import QuestionButtons from './QuestionButtons';
+import { createChatBotMessage } from 'react-chatbot-kit';
+import DogPicture from './DogPicture';
+
+const botName = 'Assistente';
 
 const config = {
-  botName: 'Assistente',
-  initialMessages: [
-    { type: 'bot', id: '1', message: 'Olá! Como posso ajudar você hoje?' },
-  ],
+  initialMessages: [createChatBotMessage(`Hi! I'm ${botName}`)],
+  botName: botName,
   widgets: [
     {
-      widgetName: "questionButtons",
-      widgetFunc: (props) => <QuestionButtons {...props} />,
-    },
+      widgetName: 'dogPicture',
+      widgetFunc: (props) => <DogPicture {...props} />
+    }
   ],
   customStyles: {
     botMessageBox: {
