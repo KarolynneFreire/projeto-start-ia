@@ -1,17 +1,12 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import ChatBot from "react-chatbotify"
-import './App.css'
+import React, { useState } from 'react'; // Corrigindo a importação de useState
+import reactLogo from './assets/react.svg';
+import viteLogo from '/vite.svg';
+import ChatbotComponent from './Chatbot';  // Importando o chatbot
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0); // Definindo o estado corretamente
 
-  const flow = {
-    "start": {
-      "message": "boa tarde!"
-    }
-  }
   return (
     <>
       <div>
@@ -27,16 +22,14 @@ function App() {
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+        <p>Edit <code>src/App.jsx</code> and save to test HMR</p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-      <ChatBot flow={flow}/>
+      <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
+      
+      {/* Adicionando o chatbot na página */}
+      <ChatbotComponent />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
