@@ -10,34 +10,34 @@ const Cadastro = () => {
 
     const [cep, setCep] = useState('');
     const [user, setUser] = useState({});
-    
+
     const handleCEPChange = (e) => {
         const newCEP = e.target.value.replace(/\D/g, '');
         setCep(newCEP);
-      };
+    };
 
-      useEffect(() => {
+    useEffect(() => {
         const fetchUserByCEP = async () => {
-          try {
-            const url = `https://brasilapi.com.br/api/cep/v1/${cep}`;
-            const response = await axios.get(url);
-            setUser(response.data);
-            console.log(response.data)
-          } catch (error) {
-            console.error('Error fetching user data:', error); 
-            setError(error);
-          } finally {
-            console.log('Finally block executed');
-          } 
+            try {
+                const url = `https://brasilapi.com.br/api/cep/v1/${cep}`;
+                const response = await axios.get(url);
+                setUser(response.data);
+                console.log(response.data)
+            } catch (error) {
+                console.error('Error fetching user data:', error);
+                setError(error);
+            } finally {
+                console.log('Finally block executed');
+            }
         };
-    
+
         if (cep.length === 8) { // Check for valid CEP length (adjust if needed)
-          fetchUserByCEP();
+            fetchUserByCEP();
         }
-      }, [cep]);
+    }, [cep]);
 
     return (
-        <div>
+        <div className='Cadastro'>
             <h1>Cadastro de usuário</h1>
             <p>Cadastre um novo usuário</p><br />
             <form action=''>
@@ -80,7 +80,7 @@ const Cadastro = () => {
                 <div className='container'>{/*Endereço começo*/}
                     <div className='container-products'>
                         <label htmlFor='cep'>Cep</label>
-                        <input type='number' className='Cadastro-inputs' id='cep' placeholder='00000000' value={cep} onChange={handleCEPChange}/><br />
+                        <input type='number' className='Cadastro-inputs' id='cep' placeholder='00000000' value={cep} onChange={handleCEPChange} /><br />
                         <label htmlFor='uf'>Estado</label>
                         <select name='uf' id='uf' className='Cadastro-inputs-select'>
                             <option value={user.state}>{user.state}</option>
@@ -115,13 +115,13 @@ const Cadastro = () => {
                     </div>
                     <div className='container-products'>
                         <label htmlFor='cidade'>Cidade</label>
-                        <input type='text' className='Cadastro-inputs' id='cidade' placeholder='ex: Recife' value={user.city}/><br />
+                        <input type='text' className='Cadastro-inputs' id='cidade' placeholder='ex: Recife' value={user.city} /><br />
                         <label htmlFor='bairro'>Bairro</label>
-                        <input type='text' className='Cadastro-inputs' id='bairro' placeholder='ex: Boa Vista' value={user.neighborhood}/><br />
+                        <input type='text' className='Cadastro-inputs' id='bairro' placeholder='ex: Boa Vista' value={user.neighborhood} /><br />
                     </div>
                     <div className='container-products'>
                         <label htmlFor='rua'>Rua</label>
-                        <input type='text' className='Cadastro-inputs' id='rua' placeholder='ex: Cais do Apolo' value={user.street}/><br />
+                        <input type='text' className='Cadastro-inputs' id='rua' placeholder='ex: Cais do Apolo' value={user.street} /><br />
                         <label htmlFor='n-endereco'>Nº da casa</label>
                         <input type='number' className='Cadastro-inputs' id='n-endereco' placeholder='ex: 925' /><br />
                     </div>
