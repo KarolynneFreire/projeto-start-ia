@@ -16,8 +16,8 @@
     "react-chatbotify": "^2.0.0-beta.7",
     "react-circular-progressbar": "^2.1.0",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^6.26.1",
     "react-draggable": "^4.4.6",
+    "react-router-dom": "^6.26.1",
     "react-simple-chatbot": "^0.5.0"
   },
   "devDependencies": {

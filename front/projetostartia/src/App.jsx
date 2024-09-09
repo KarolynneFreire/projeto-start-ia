@@ -1,19 +1,11 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-
 import './App.css';
 import Navbar from './assets/components/Navbar';
 import ChatbotComponent from './Chatbot/ChatbotComponent.jsx'; // Caminho corrigido
-import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
 
-  const flow = {
-    "start": {
-      "message": "boa tarde!"
-    }
-  }
   return (
   <>
 <div className="App">
