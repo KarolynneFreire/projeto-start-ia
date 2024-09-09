@@ -12,10 +12,13 @@
   "dependencies": {
     "axios": "^1.7.7",
     "react": "^18.3.1",
+    "react-chatbot-kit": "^2.2.2",
     "react-chatbotify": "^2.0.0-beta.7",
     "react-circular-progressbar": "^2.1.0",
-    "react-dom": "^18.3.1",
     "react-router-dom": "^6.26.1"
+    "react-dom": "^18.3.1",
+    "react-draggable": "^4.4.6",
+    "react-simple-chatbot": "^0.5.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",

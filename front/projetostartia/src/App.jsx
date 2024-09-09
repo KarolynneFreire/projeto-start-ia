@@ -12,6 +12,7 @@ function App() {
       <Outlet /> {/* Isso renderiza as rotas filhas (Home, Cadastro, Consulta, etc.) */}
       {/* <ChatBot flow={flow} /> */}
     </div>
+
   );
 }
 
