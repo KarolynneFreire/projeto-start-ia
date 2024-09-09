@@ -1,9 +1,18 @@
 import React from 'react';
 
 const ActionProvider = ({ createChatBotMessage, setState, children }) => {
+  
+  // Function to handle the learning option message
+  const handleLearningOption = (message) => {
+    const botMessage = createChatBotMessage(message);
+    setState((prev) => ({
+      ...prev,
+      messages: [...prev.messages, botMessage],
+    }));
+  };
+
   const handleHello = () => {
     const botMessage = createChatBotMessage('Hello. Nice to meet you.');
-
     setState((prev) => ({
       ...prev,
       messages: [...prev.messages, botMessage],
@@ -17,14 +26,12 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
         widget: 'dogPicture',
       }
     );
-
     setState((prev) => ({
       ...prev,
       messages: [...prev.messages, botMessage],
     }));
   };
 
-  // Put the handleHello and handleDog function in the actions object to pass to the MessageParser
   return (
     <div>
       {React.Children.map(children, (child) => {
@@ -32,6 +39,7 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
           actions: {
             handleHello,
             handleDog,
+            handleLearningOption,  // Include the new learning option action
           },
         });
       })}

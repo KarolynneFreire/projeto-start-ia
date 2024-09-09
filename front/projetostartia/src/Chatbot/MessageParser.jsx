@@ -3,7 +3,7 @@ import React from 'react';
 const MessageParser = ({ children, actions }) => {
   const parse = (message) => {
     // Save the user's message
-    actions.saveUserMessage(message);
+    /*actions.saveUserMessage(message);*/
 
     if (message.includes('hello')) {
       actions.handleHello();
