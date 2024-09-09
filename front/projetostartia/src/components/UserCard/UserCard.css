@@ -1,0 +1,41 @@
+.user-card{
+    flex: 2px;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    margin: 10%;
+}
+.button-real {
+    background: rgb(89, 148, 132); 
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3); 
+    padding: 12px 24px;
+    font-size: 16px; 
+    border-radius: 8px; 
+    cursor: pointer; 
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.2s ease; 
+  }
+  
+  .button-real:active {
+    transform: translateY(4px); 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); 
+  }
+  
+  .button-real:hover {
+    background: rgb(4, 59, 45); 
+  }
+  
+  .button-real:focus {
+    outline: none; 
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+  }
+  
+  
+  .progress-container {
+      width: 150px; 
+      height: 150px; 
+      margin: 0 auto; 
+    }

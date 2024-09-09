@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import Modal from '../../components/Modal/Modal';
-import ChangingProgressProvider from '../../components/Feature/ChangingProgressProvider.js';
+import ChangingProgressProvider from './ChangingProgressProvider.js';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import axios from 'axios';
-import '../../components/Feature/Feature.css'
+import '../../components/UserCard/UserCard.css'
 
 function UserCard({ nome, idade }) {
   const [showModal, setShowModal] = useState(false);
   const [resultado, setResultado] = useState(null);
   const [progresso, setProgresso] = useState(0);
-  const [isGifActive, setIsGifActive] = useState(true); // Controle do gif
+  const [isGifActive, setIsGifActive] = useState(true); 
 
   const handleVisualizar = () => {
     setShowModal(true);
