@@ -1,0 +1,105 @@
+.user-card{
+    flex: 2px;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 400px;
+}
+
+.top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: brown;
+}
+
+.title{
+        font-size: 16px;
+        font-weight: 500;
+ }
+
+ .bottom{
+     display: flex;
+     padding: 5px;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     gap: 15x;
+ }
+
+ .featurechat{
+    height: 110px;
+    width: 110px;
+ }
+
+ .name{
+     margin-top: 3px;
+     font-size: 20px;
+ }
+
+ .desc{    
+    margin-top: 3px;
+    font-weight: 300;
+    font-size: 12px;
+    text-align: center;
+    color: cadetblue;
+ }
+.sumary{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.itens{
+    text-align: center;
+}
+
+.itenstitle{
+font-size: 14px;
+}
+
+.itensresul{
+    display: flex;
+    align-items: center;
+    margin-top: 10x;
+    font-size: 14px;
+}
+
+/* Estilo básico do botão com efeito de vidro */
+.button-real {
+  background: rgb(89, 148, 132); /* Fundo semitransparente */
+  color: white; /* Texto branco */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Borda semitransparente */
+  padding: 12px 24px; /* Espaçamento interno */
+  font-size: 16px; /* Tamanho da fonte */
+  border-radius: 8px; /* Bordas arredondadas */
+  cursor: pointer; /* Muda o cursor para indicar que é clicável */
+  backdrop-filter: blur(10px); /* Efeito de desfoque */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidade */
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.2s ease; /* Transição suave */
+}
+
+/* Efeito de pressionar */
+.button-real:active {
+  transform: translateY(4px); /* Move o botão para baixo */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); /* Sombra mais sutil ao ser pressionado */
+}
+
+/* Efeito de hover */
+.button-real:hover {
+  background: rgb(4, 59, 45); /* Fundo semitransparente */
+}
+
+/* Estilo de foco */
+.button-real:focus {
+  outline: none; /* Remove a borda padrão de foco */
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2); /* Brilho ao redor no foco */
+}
+
+
+.progress-container {
+    width: 150px; /* Defina a largura desejada aqui */
+    height: 150px; /* Defina a altura desejada aqui */
+    margin: 0 auto; /* Centraliza o gráfico de progresso no modal */
+  }
