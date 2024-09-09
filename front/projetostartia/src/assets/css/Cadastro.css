@@ -30,13 +30,55 @@ form span{
     background: rgb(139, 168, 160);
 }
 
-.container{
+.container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
 
-.container-products{
+.container-products {
     display: grid;
     justify-content: space-around;
     justify-items: start;
 }
+
+.container-products p{
+    font-size: 10px;
+}
+
+.for-acad{ 
+    display: flex;
+    align-items: center;
+}
+
+input{
+    padding-left: 1vw;
+}
+
+select{
+    padding-left: 1vw;
+}
+.form-btn-cadastro {
+    height: 7vh;
+    width: 15vw;
+    border: solid 1px black;
+    background-color: rgb(89, 148, 132);
+    color: white;
+    border-radius: 30px;
+    margin-left: 42.5%;
+    margin-bottom: 5vh;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.form-btn-cadastro:hover{
+    animation: pulse 1s ease-in-out ;
+  }
+  
+  @keyframes pulse {
+    50% {
+      box-shadow: 0 0 10px rgb(89, 148, 132);
+      transform: scale(1.05);
+    }
+  }
+
+  
