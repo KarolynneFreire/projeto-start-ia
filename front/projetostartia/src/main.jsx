@@ -8,6 +8,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from './assets/routes/Home.jsx'
 import ErrorPage from './assets/routes/Error.jsx';
 import Cadastro from './assets/routes/Cadastro.jsx';
+import Consulta from './assets/routes/Consulta.jsx';
 
 const router = createBrowserRouter([
   {
@@ -16,13 +17,17 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "/start-projet/",
-        element: <Home />,
+        path: "/start-projeto/",
+        element: <Home />, // Define a rota para Home como default para "/start-projeto/"
       },
-     // {
-     //   path: "/start-projeto/cadastro",
-     //   element: <Cadastro />,
-    //  },
+      {
+        path: "/start-projeto/cadastro",
+        element: <Cadastro />,
+      },
+      {
+        path: "/start-projeto/consulta",
+        element: <Consulta />,
+      },
     ],
   },
 ]);

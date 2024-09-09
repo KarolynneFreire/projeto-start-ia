@@ -50,33 +50,33 @@
   background: none;
 }
 
-.banner button {
-  padding: 15px 30px;
-  font-size: 1.2rem;
-  background-color: #ffeb3b;
-  border: none;
-  border-radius: 30px;
-  color: #333;
-  cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
+/* Estilo básico do botão com efeito de vidro */
+.button-real {
+  background: rgb(89, 148, 132); /* Fundo semitransparente */
+  color: white; /* Texto branco */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Borda semitransparente */
+  padding: 12px 24px; /* Espaçamento interno */
+  font-size: 16px; /* Tamanho da fonte */
+  border-radius: 8px; /* Bordas arredondadas */
+  cursor: pointer; /* Muda o cursor para indicar que é clicável */
+  backdrop-filter: blur(10px); /* Efeito de desfoque */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidade */
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.2s ease; /* Transição suave */
 }
 
-.banner button:hover {
-  background-color: #fff176;
+/* Efeito de pressionar */
+.button-real:active {
+  transform: translateY(4px); /* Move o botão para baixo */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); /* Sombra mais sutil ao ser pressionado */
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-  .banner h1 {
-    font-size: 2.5rem;
-  }
+/* Efeito de hover */
+.button-real:hover {
+  background: rgb(4, 59, 45); /* Fundo semitransparente */
+}
 
-  .banner p {
-    font-size: 1.2rem;
-  }
-
-  .banner button {
-    padding: 12px 25px;
-    font-size: 1rem;
-  }
+/* Estilo de foco */
+.button-real:focus {
+  outline: none; /* Remove a borda padrão de foco */
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2); /* Brilho ao redor no foco */
 }

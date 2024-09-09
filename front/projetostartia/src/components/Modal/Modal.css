@@ -1,0 +1,81 @@
+/* Estilo para o fundo do modal (escurece o fundo da página) */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5); /* Fundo escuro semitransparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Garante que o modal fique sobreposto a outros elementos */
+}
+
+/* Estilo do conteúdo do modal */
+.modal-content {
+    background: rgba(255, 255, 255, 0.6); /* Fundo com transparência para o efeito vidro */
+    backdrop-filter: blur(15px); /* Efeito de desfoque */
+    border-radius: 12px;
+    padding: 20px;
+    width: 400px; /* Largura fixa para o modal */
+    max-width: 90%; /* Responsivo em telas menores */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidade */
+    position: relative;
+}
+
+/* Estilo para o botão de fechar */
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 5%;
+    height: 13%;
+    width: 8%;
+    background: rgb(89, 148, 132); /* Fundo semitransparente */
+    color: black;
+    border: none;
+    font-size: 20px; /* Tamanho do símbolo de fechar */
+    cursor: pointer;
+    border-radius: 50%; /* Formato circular */
+    padding: 5px;
+    transition: background 0.3s ease, transform 0.1s ease; /* Transição suave para hover e clique */
+}
+
+.close-button:hover {
+    background: rgb(4, 51, 38); /* Fica mais opaco ao passar o mouse */
+    color: white;
+}
+
+.close-button:active {
+    transform: scale(0.95); /* Efeito de clique */
+}
+
+/* Para remover as bordas padrão no foco */
+.close-button:focus {
+    outline: none;
+}
+
+/* Animação de entrada do modal */
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px); /* Modal começa ligeiramente acima */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Fica no lugar correto */
+    }
+}
+
+.modal-content {
+    animation: modalFadeIn 0.3s ease-in-out; /* Animação suave na entrada */
+    
+}
+
+/* Remove fundo branco dos textos dentro do modal */
+.modal-content h2,
+.modal-content p {
+    background: transparent; /* Remove o fundo branco dos textos */
+    color: inherit; /* Mantém a cor do texto, herda da regra pai */
+}
+

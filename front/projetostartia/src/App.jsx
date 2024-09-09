@@ -3,15 +3,13 @@ import { Outlet } from 'react-router-dom';
 
 import './App.css';
 import Navbar from './assets/components/Navbar';
-import Home from './assets/routes/Home';
 
 function App() {
   return (
     <div className="App">
       <Navbar />
-      <Home />
-      <Outlet />
-      {/* Uncomment the following line to enable the ChatBot component */}
+      {/* O componente Home será renderizado pela rota, então remova-o daqui */}
+      <Outlet /> {/* Isso renderiza as rotas filhas (Home, Cadastro, Consulta, etc.) */}
       {/* <ChatBot flow={flow} /> */}
     </div>
   );

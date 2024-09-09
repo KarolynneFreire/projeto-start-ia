@@ -7,7 +7,7 @@ const Banner = () => {
       <div className="banner-content">
         <h1>Bem-vindo ao nosso site</h1>
         <p>Descubra como podemos ajudá-lo a economizar tempo e aumentar sua produtividade</p>
-        <button>Começar</button>
+        <button className='button-real'>Começar</button>
       </div>
     </section>
   );
