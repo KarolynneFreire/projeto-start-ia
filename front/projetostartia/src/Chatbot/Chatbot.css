@@ -3,21 +3,33 @@
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: transparent;
+  background-color: transparent; /* Remover a cor de fundo */
   border: none;
   cursor: pointer;
   z-index: 1000;
+  width: 60px;
+  height: 60px;
+  padding: 0;
 }
+
+/* Ajustar a imagem do ícone para centralizar e remover o círculo */
+.chatbot-button img {
+  width: 100%; /* Tornar a imagem quadrada preenchendo o espaço do botão */
+  height: auto;
+  border-radius: 0; /* Remover qualquer arredondamento */
+  object-fit: contain; /* Garantir que a imagem seja ajustada proporcionalmente */
+}
+
 
 /* Contêiner do chatbot */
 .chatbot-container {
   position: fixed;
-  bottom: 70px;
+  bottom: 80px;
   right: 20px;
-  width: 350px;
-  height: 500px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
+  width: 360px;
+  height: 520px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
   background-color: #fff;
   display: flex;
   flex-direction: column;
@@ -31,29 +43,53 @@
   cursor: move;
   background-color: #00B2A9;
   color: white;
-  padding: 10px;
+  padding: 12px;
   font-size: 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-radius: 10px 10px 0 0;
+  border-radius: 12px 12px 0 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Área de mensagens */
 .react-chatbot-kit-chat-message-container {
   flex: 1;
   overflow-y: auto;
-  padding: 10px;
+  padding: 12px;
   margin: 0;
+  background-color: #F4F7F9; /* Cor clara para contraste */
+}
+
+/* Estilos para mensagens */
+.react-chatbot-kit-chat-bot-message {
+  background-color: #00A9A5;
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+  max-width: 80%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.react-chatbot-kit-chat-user-message {
+  background-color: #E0E0E0;
+  color: black;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+  align-self: flex-end;
+  max-width: 80%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Campo de entrada */
 .react-chatbot-kit-chat-input {
   display: flex;
-  background-color: #f0f0f0;
-  padding: 10px;
+  background-color: #f7f7f7;
+  padding: 12px;
   border-top: 1px solid #ddd;
-  border-radius: 0 0 10px 10px;
+  border-radius: 0 0 12px 12px;
   margin: 0;
 }
 
@@ -64,18 +100,28 @@
   margin-right: 10px;
   border-radius: 10px;
   outline: none;
-  color: black; /* Updated text color */
+  color: black;
+  background-color: #fff;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .react-chatbot-kit-chat-input button {
   background-color: #00B2A9;
   border: none;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
   color: white;
   cursor: pointer;
   margin-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.react-chatbot-kit-chat-input button i {
+  font-size: 1.5em;
 }
 
 /* Remover largura extra */
@@ -83,4 +129,19 @@
   margin: 0;
   padding: 0;
   width: 100%;
+}
+
+/* Tornar a barra de rolagem invisível para todos os navegadores */
+.react-chatbot-kit-chat-message-container {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  overflow-y: scroll;
+}
+
+.react-chatbot-kit-chat-message-container::-webkit-scrollbar {
+  width: 0px; /* Ocultar a barra de rolagem no Chrome, Safari e outros WebKit */
+}
+
+.react-chatbot-kit-chat-message-container::-webkit-scrollbar-thumb {
+  background: transparent; /* Especificar fundo transparente */
 }
