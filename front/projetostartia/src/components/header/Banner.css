@@ -1,0 +1,82 @@
+/* Estilos para o banner */
+.banner {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-image: url('https://hsvp.org.br/wp-content/uploads/2021/08/Servico_Social_O-HOSPITAL_05.jpg'); /* URL de exemplo, substitua conforme necessário */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Sobreposição escura para contraste */
+  z-index: 1;
+}
+
+.banner-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1); /* Reduz a opacidade para deixar mais transparente */
+  border-radius: 15px; /* Bordas arredondadas */
+  backdrop-filter: blur(15px); /* Desfoque mais forte no fundo */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra leve */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Bordas brancas semitransparentes */
+}
+
+
+.banner h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  background: none;
+}
+
+.banner p {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  background: none;
+}
+
+/* Estilo básico do botão com efeito de vidro */
+.button-real {
+  background: rgb(89, 148, 132); /* Fundo semitransparente */
+  color: white; /* Texto branco */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Borda semitransparente */
+  padding: 12px 24px; /* Espaçamento interno */
+  font-size: 16px; /* Tamanho da fonte */
+  border-radius: 8px; /* Bordas arredondadas */
+  cursor: pointer; /* Muda o cursor para indicar que é clicável */
+  backdrop-filter: blur(10px); /* Efeito de desfoque */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidade */
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.2s ease; /* Transição suave */
+}
+
+/* Efeito de pressionar */
+.button-real:active {
+  transform: translateY(4px); /* Move o botão para baixo */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); /* Sombra mais sutil ao ser pressionado */
+}
+
+/* Efeito de hover */
+.button-real:hover {
+  background: rgb(4, 59, 45); /* Fundo semitransparente */
+}
+
+/* Estilo de foco */
+.button-real:focus {
+  outline: none; /* Remove a borda padrão de foco */
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2); /* Brilho ao redor no foco */
+}
