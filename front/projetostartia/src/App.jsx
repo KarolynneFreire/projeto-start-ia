@@ -1,24 +1,18 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import ChatBot from "react-chatbotify"
-import './App.css'
-import Feature from './components/Feature/Feature'
+import React from 'react';
+import { Outlet } from 'react-router-dom';
+
+import './App.css';
+import Navbar from './assets/components/Navbar';
 
 function App() {
-  
-
-  const flow = {
-    "start": {
-      "message": "boa tarde !"
-    }
-  }
   return (
-    <>
-      <Feature />
-      <ChatBot flow={flow} />
-    </>
-  )
+    <div className="App">
+      <Navbar />
+      {/* O componente Home será renderizado pela rota, então remova-o daqui */}
+      <Outlet /> {/* Isso renderiza as rotas filhas (Home, Cadastro, Consulta, etc.) */}
+      {/* <ChatBot flow={flow} /> */}
+    </div>
+  );
 }
 
-export default App
+export default App;

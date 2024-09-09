@@ -1,0 +1,75 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: rgba(255, 255, 255, 0.6); 
+    backdrop-filter: blur(15px); 
+    border-radius: 12px;
+    padding: 20px;
+    width: 400px; 
+    max-width: 90%;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+    position: relative;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 5%;
+    height: 13%;
+    width: 8%;
+    background: rgb(89, 148, 132); 
+    color: black;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 50%; 
+    padding: 5px;
+    transition: background 0.3s ease, transform 0.1s ease;
+}
+
+.close-button:hover {
+    background: rgb(4, 51, 38); 
+    color: white;
+}
+
+.close-button:active {
+    transform: scale(0.95); 
+}
+
+
+.close-button:focus {
+    outline: none;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px); 
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); 
+    }
+}
+
+.modal-content {
+    animation: modalFadeIn 0.3s ease-in-out; 
+}
+
+.modal-content h2,
+.modal-content p {
+    background: transparent; 
+    color: inherit; 
+}
+
