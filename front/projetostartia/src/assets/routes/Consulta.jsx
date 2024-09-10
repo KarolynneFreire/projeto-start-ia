@@ -9,7 +9,7 @@ function Consulta() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:4000/posts')
+    axios.get('http://127.0.0.1:8000/v1/api/usuarios/?skip=0&limit=100')
 
       .then(response => {
         setPosts(response.data);
@@ -33,15 +33,13 @@ function Consulta() {
         {posts.map(post => (
           <div key={post.Nome} className='dados-pessoa'>
             <button className='btn-pessoa'>
-              <h2>{post.Cpf}</h2>
+              <h2>{post.id}</h2>
               <h2>|</h2>
-              <p>{post.Nome}</p>
+              <p>{post.nomeCompleto}</p>
               <h2>|</h2>
-              <p>{post.Rg}</p>
+              <p>{post.email}</p>
               <h2>|</h2>
-              <p>{post.Cep}</p>
-              <h2>|</h2>
-              <p>{post.Vune}</p>
+              <p>{post.isVulneravel}</p>
             </button>
           </div>
         ))}
