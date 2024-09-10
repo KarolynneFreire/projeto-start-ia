@@ -29,19 +29,16 @@ function Consulta() {
         <input type="search" name="" id="" className='input-pesquisa' />
         <input type="search" name="" id="" className='input-pesquisa' />
       </div>
-      <div>
+      <div className="user-container">
         {posts.map(post => (
-          <div key={post.Nome} className='dados-pessoa'>
-            <button className='btn-pessoa'>
-              <h2>{post.id}</h2>
-              <h2>|</h2>
-              <p>{post.nomeCompleto}</p>
-              <h2>|</h2>
-              <p>{post.email}</p>
-              <h2>|</h2>
-              <p>{post.isVulneravel}</p>
-            </button>
-          </div>
+          <button key={post.id} className='btn-pessoa'>
+            <h2>{post.nomeCompleto}</h2>
+            <p><strong>CPF:</strong> {post.cpf}</p>
+            <p><strong>Email:</strong> {post.email}</p>
+            <p className={`status ${post.isVulneravel ? 'vulneravel' : 'nao-vulneravel'}`}>
+              <strong>Status:</strong> {post.isVulneravel ? 'Vulnerável' : 'Não Vulnerável'}
+            </p>
+          </button>
         ))}
       </div>
     </div>
