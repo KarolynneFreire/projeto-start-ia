@@ -1,30 +1,31 @@
 import React, { useState } from 'react';
 import { Chatbot } from 'react-chatbot-kit';
 import Draggable from 'react-draggable';
-import 'react-chatbot-kit/build/main.css';
-import './Chatbot/Chatbot.css'; 
-import botIcon from '../assets/icone_chatbot.png';
-import ActionProvider from './Chatbot/ActionProvider';
-import MessageParser from './Chatbot/MessageParser';
-import config from './Chatbot/Config';
+import 'react-chatbot-kit/build/main.css'; // Importa os estilos básicos do chatbot kit
+import './Chatbot/Chatbot.css'; // Importa os estilos personalizados para o chatbot
+import botIcon from '../assets/icone_chatbot.png'; // Importa o ícone do chatbot
+import ActionProvider from './Chatbot/ActionProvider'; // Importa o ActionProvider para lidar com ações
+import MessageParser from './Chatbot/MessageParser'; // Importa o MessageParser para interpretar mensagens
+import config from './Chatbot/Config'; // Configuração do chatbot
 
 function ChatbotComponent() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false); // Estado para controlar se o chatbot está aberto ou fechado
 
+  // Função para alternar a visibilidade do chatbot
   const toggleChatbot = () => {
     setIsOpen(!isOpen);
   };
 
   return (
     <div>
-      {/* Floating bot icon */}
+      {/* Ícone flutuante do bot que é exibido quando o chatbot está fechado */}
       {!isOpen && (
         <button className="chatbot-button" onClick={toggleChatbot}>
-          <img src={botIcon} alt="Bot Icon" style={{ width: '50px', height: '50px' }} />
+          <img src={botIcon} alt="Bot Icon" className="chatbot-icon" />
         </button>
       )}
 
-      {/* Draggable chatbot container */}
+      {/* Contêiner do chatbot que pode ser arrastado pela tela */}
       {isOpen && (
         <Draggable>
           <div id="chatbot-container" className="chatbot-container">

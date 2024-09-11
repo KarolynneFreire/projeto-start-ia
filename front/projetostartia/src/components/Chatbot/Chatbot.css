@@ -145,3 +145,27 @@
 .react-chatbot-kit-chat-message-container::-webkit-scrollbar-thumb {
   background: transparent; /* Especificar fundo transparente */
 }
+
+.bot-avatar {
+  background-color: #00B2A9;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+}
+
+.user-avatar {
+  background-color: #4A90E2;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+}
