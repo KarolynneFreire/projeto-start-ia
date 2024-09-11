@@ -1,0 +1,79 @@
+
+.cards-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+
+.card {
+  background-color: white;
+  border-radius: 15px; /* Arredondando o card completo */
+  overflow: hidden; /* Garante que o conteúdo extra não ultrapasse as bordas arredondadas */
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3); 
+}
+
+.card-header {
+  
+  color: rgb(89, 148, 132); /* O número ficará branco */
+  padding: 20px 0;
+  font-size: 2.5rem;
+  border-top-left-radius: 15px; /* Arredonda o topo esquerdo */
+  border-top-right-radius: 15px; /* Arredonda o topo direito */
+  text-align: center; /* Centraliza o número */
+  
+}
+
+.card-header h1{
+  background: none;
+}
+
+.card:hover {
+  transform: translateY(-10px); /* Efeito hover */
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-body p {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.card-body button {
+  padding: 10px 20px;
+  background-color: #FFA500; /* Botão com a mesma cor do topo */
+  border: none;
+  border-radius: 50px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.card-body button:hover {
+  background-color: #e69500; /* Cor mais escura ao passar o mouse */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 350px;
+  }
+}
+  
+  
