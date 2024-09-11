@@ -16,6 +16,7 @@ const Cadastro = () => {
     const [racaCor, setRacaCor] = useState([]);
     const [pcd, setPcd] = useState([]);
     const [deficiencias, setDeficiencias] = useState([]);
+    const [estadosCivil, setEstadosCivil] = useState([]);
     const [grupos, setGrupos] = useState([]);
     const [user, setUser] = useState({});
     const [nomeCompleto, setNomeCompleto] = useState('');
@@ -52,6 +53,22 @@ const Cadastro = () => {
     const handleCEPChange = (e) => {
         const newCEP = e.target.value.replace(/\D/g, '');
         setCep(newCEP);
+    };
+
+    const calcularFaixaEtaria = (dataNasc) => {
+        const idade = calcularIdade(dataNasc);
+    
+        if (idade >= 0 && idade <= 11) {
+            return 'Infantil';
+        } else if (idade >= 12 && idade <= 17) {
+            return 'Adolescente';
+        } else if (idade >= 18 && idade <= 59) {
+            return 'Adulto';
+        } else if (idade >= 60) {
+            return 'Idoso';
+        } else {
+            return 'Faixa etária desconhecida';
+        }
     };
 
     const cidade = user.city
@@ -174,6 +191,19 @@ const Cadastro = () => {
         };
 
         fetchGrupos();
+    }, []);
+
+    useEffect(() => {
+        const fetchEstadosCivil = async () => {
+            try {
+                const response = await axios.get('http://localhost:4000/estadosCivil');
+                setEstadosCivil(response.data);
+            } catch (error) {
+                console.error('Error fetching estadosCivil:', error);
+            }
+        };
+
+        fetchEstadosCivil();
     }, []);
 
     const handleSubmit = async (e) => {
@@ -422,6 +452,14 @@ const Cadastro = () => {
                             {grupos.map((grupo) => (
                                 <option key={grupo.id} value={grupo.value}>
                                     {grupo.descricao}
+                                </option>
+                            ))}
+                        </select><br />
+                        <label htmlFor='estadoCivil'>Estado Civil*</label>
+                        <select name='estadoCivil' id='estadoCivil' className='Cadastro-inputs-select'>
+                            {estadosCivil.map((estado) => (
+                                <option key={estado.id} value={estado.id}>
+                                    {estado.descricao}
                                 </option>
                             ))}
                         </select><br />

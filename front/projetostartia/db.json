@@ -113,5 +113,13 @@
     { "id": 19, "value": "trab-indust-banc", "descricao": "Trabalhadores industriais e bancários" },
     { "id": 20, "value": "trab-portuario", "descricao": "Trabalhadores portuários" },
     { "id": 21, "value": "outros", "descricao": "Outros" }
+  ],
+  "estadosCivil": [
+    { "id": 0, "value": "", "descricao": "" },
+    { "id": 1, "descricao": "Solteiro(a)" },
+    { "id": 2, "descricao": "Casado(a)" },
+    { "id": 3, "descricao": "Divorciado(a)" },
+    { "id": 4, "descricao": "Viúvo(a)" },
+    { "id": 5, "descricao": "Separado(a)" }
   ]
 }
