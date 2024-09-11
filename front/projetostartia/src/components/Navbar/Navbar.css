@@ -56,12 +56,13 @@ li {
 }
 
 .Nav-button-perfil {
-    border: none;
-    border-radius: 20px;
     background-color: rgb(89, 148, 132);
     color: white;
-    height: 5vh;
-    width: 5vw;
+    border: 1px solid rgba(255, 255, 255, 0.3);    border-radius: 20px;
+    padding: 1vh 2vw;
+    font-size: 1em;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.2s ease;
     cursor: pointer;
 }
 

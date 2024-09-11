@@ -10,7 +10,7 @@ function Consulta() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:4000/posts')
+    axios.get('http://localhost:4000/dados')
 
       .then(response => {
         setPosts(response.data);
@@ -23,7 +23,7 @@ function Consulta() {
 
   return (
     <div>
-      <UserCard></UserCard>
+      {/*<UserCard></UserCard>*/}
       <div className='consulta-pesquisa'>
         <input type="search" id='nome' className='input-pesquisa' />
         <input type="search" name="" id="" className='input-pesquisa' />
@@ -31,21 +31,16 @@ function Consulta() {
         <input type="search" name="" id="" className='input-pesquisa' />
         <input type="search" name="" id="" className='input-pesquisa' />
       </div>
-      <div>
+      <div className="user-container">
         {posts.map(post => (
-          <div key={post.Nome} className='dados-pessoa'>
-            <button className='btn-pessoa'>
-              <h2>{post.Cpf}</h2>
-              <h2>|</h2>
-              <p>{post.Nome}</p>
-              <h2>|</h2>
-              <p>{post.Rg}</p>
-              <h2>|</h2>
-              <p>{post.Cep}</p>
-              <h2>|</h2>
-              <p>{post.Vune}</p>
-            </button>
-          </div>
+          <button key={post.id} className='btn-pessoa'>
+            <h2>{post.nomeCompleto}</h2>
+            <p><strong>CPF:</strong> {post.cpf}</p>
+            <p><strong>Email:</strong> {post.email}</p>
+            <p className={`status ${post.isVulneravel ? 'vulneravel' : 'nao-vulneravel'}`}>
+              <strong>Status:</strong> {post.isVulneravel ? 'Vulnerável' : 'Não Vulnerável'}
+            </p>
+          </button>
         ))}
       </div>
     </div>

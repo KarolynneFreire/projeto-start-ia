@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
 
-import '../css/Navbar.css'
+import './Navbar.css'
 
-import logoNavBar from '../Img/Cras.png'
+import logoNavBar from '../../assets/Img/Cras.png'
 
 const Navbar = () => {
   return (
@@ -15,7 +15,7 @@ const Navbar = () => {
             <li><Link to="/start-projeto/cadastro" className='Nav-div-link'>Cadastro</Link></li>
             <li><Link to="/start-projeto/consulta" className='Nav-div-link'>Consulta</Link></li>
             <li><Link to="" className='Nav-div-link'>Dados</Link></li>
-            <li><Link to="" className='Nav-div-link'>Acessibilidade</Link></li>
+            <li><Link to="/start-projeto/acessibilidade" className='Nav-div-link'>Acessibilidade</Link></li>
             <div className='Nav-div'>
               <p>|</p>
               <button className='Nav-button-fontsize'>A-</button>
