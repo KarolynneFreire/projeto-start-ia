@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="row">
         </div>
         <div className="copyright">
-          <p>© 2023 Todos os direitos reservados.</p>
+          <p>© 2024 Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>

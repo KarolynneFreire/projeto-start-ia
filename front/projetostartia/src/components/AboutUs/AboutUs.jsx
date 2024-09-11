@@ -11,9 +11,9 @@ const AboutUs = () => {
                 “O termo vulnerabilidade social refere-se à situação socioeconômica de grupos de pessoas com poucos recursos financeiros, de moradia,
                  educação e acesso a oportunidades para seu desenvolvimento enquanto cidadão” (Sermais)
                 </p>
-                <div className="skill">
+                {/* <div className="skill">
                     <button>leia</button>
-                </div>
+                </div> */}
             </div>
         </div>
         </div>
