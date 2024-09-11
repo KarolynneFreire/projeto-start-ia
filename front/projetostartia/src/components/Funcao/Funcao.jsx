@@ -1,5 +1,5 @@
   import React from 'react';
-  import './Funcao.css'; // Importa os estilos CSS
+  import './Funcao.css'; 
   
 
     const Funcao = () => {
