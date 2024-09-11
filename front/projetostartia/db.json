@@ -75,5 +75,43 @@
     { "id": 3, "descricao": "Branco" },
     { "id": 4, "descricao": "Indígena" },
     { "id": 5, "descricao": "Amarelo" }
+  ],
+"pcd": [
+    { "id": 0, "descricao": "" },
+    { "id": 1, "descricao": "Não" },
+    { "id": 2, "descricao": "Sim" }
+  ],
+  "deficiencias": [
+    { "id": 0, "descricao": "" },
+    { "id": 1, "descricao": "Deficiência Física" },
+    { "id": 2, "descricao": "Deficiência Auditiva" },
+    { "id": 3, "descricao": "Deficiência Visual" },
+    { "id": 4, "descricao": "Deficiência Intelectual" },
+    { "id": 5, "descricao": "Deficiência Psicossocial" },
+    { "id": 6, "descricao": "Deficiência Múltipla" },
+    { "id": 7, "descricao": "Outras Deficiências" }
+  ],
+  "grupos": [
+    { "id": 1, "value": "", "descricao": "" },
+    { "id": 2, "value": "caminhoneiros", "descricao": "Caminhoneiros" },
+    { "id": 3, "value": "gest-puer", "descricao": "Gestantes e puérperas" },
+    { "id": 4, "value": "gest-puer-Nrec", "descricao": "Gestantes e puérperas não residentes de Recife" },
+    { "id": 5, "value": "idosos", "descricao": "Idosos" },
+    { "id": 6, "value": "p-geral", "descricao": "Público em geral" },
+    { "id": 7, "value": "p-comorbidades", "descricao": "Pessoa com comorbidades" },
+    { "id": 8, "value": "p-viagem-ext", "descricao": "Pessoa com viagem para o exterior" },
+    { "id": 9, "value": "p-situação-r", "descricao": "Pessoa em situação de rua" },
+    { "id": 10, "value": "sesau-busca-atv", "descricao": "Sesau - Busca ativa" },
+    { "id": 11, "value": "trab-assis-social", "descricao": "Trabalhadores da Assistência Social" },
+    { "id": 12, "value": "trab-educa", "descricao": "Trabalhadores da Educação" },
+    { "id": 13, "value": "trab-limp-urb", "descricao": "Trabalhadores da limpeza urbana" },
+    { "id": 14, "value": "trab-saude", "descricao": "Trabalhadores da saúde" },
+    { "id": 15, "value": "trab-transp-aereo", "descricao": "Trabalhadores de transporte aéreo" },
+    { "id": 16, "value": "trab-transp-aqua", "descricao": "Trabalhadores de transporte aquaviário" },
+    { "id": 17, "value": "trab-transp-rodo", "descricao": "Trabalhadores de transporte rodoviário" },
+    { "id": 18, "value": "trab-transp-ferro-metro", "descricao": "Trabalhadores de transporte metroviário e ferroviário" },
+    { "id": 19, "value": "trab-indust-banc", "descricao": "Trabalhadores industriais e bancários" },
+    { "id": 20, "value": "trab-portuario", "descricao": "Trabalhadores portuários" },
+    { "id": 21, "value": "outros", "descricao": "Outros" }
   ]
 }

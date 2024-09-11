@@ -14,7 +14,9 @@ const Cadastro = () => {
     const [sexos, setSexos] = useState([]);
     const [escolaridades, setEscolaridades] = useState([]);
     const [racaCor, setRacaCor] = useState([]);
-
+    const [pcd, setPcd] = useState([]);
+    const [deficiencias, setDeficiencias] = useState([]);
+    const [grupos, setGrupos] = useState([]);
     const [user, setUser] = useState({});
     const [nomeCompleto, setNomeCompleto] = useState('');
     const [dataNascimento, setDataNascimento] = useState('');
@@ -133,6 +135,45 @@ const Cadastro = () => {
         };
 
         fetchRacaCor();
+    }, []);
+
+    useEffect(() => {
+        const fetchPcd = async () => {
+            try {
+                const response = await axios.get('http://localhost:4000/pcd');
+                setPcd(response.data);
+            } catch (error) {
+                console.error('Error fetching pcd:', error);
+            }
+        };
+
+        fetchPcd();
+    }, []);
+
+    useEffect(() => {
+        const fetchDeficiencias = async () => {
+            try {
+                const response = await axios.get('http://localhost:4000/deficiencias');
+                setDeficiencias(response.data);
+            } catch (error) {
+                console.error('Error fetching deficiencias:', error);
+            }
+        };
+
+        fetchDeficiencias();
+    }, []);
+
+    useEffect(() => {
+        const fetchGrupos = async () => {
+            try {
+                const response = await axios.get('http://localhost:4000/grupos');
+                setGrupos(response.data);
+            } catch (error) {
+                console.error('Error fetching grupos:', error);
+            }
+        };
+
+        fetchGrupos();
     }, []);
 
     const handleSubmit = async (e) => {
@@ -360,45 +401,29 @@ const Cadastro = () => {
                         /><br />
                     </div>
                     <div className='container-products'>
-                        <label htmlFor='PCD'>Portador de deficiencia*</label>
+                        <label htmlFor='PCD'>Portador de deficiencias*</label>
                         <select name='PCD' id='PCD' className='Cadastro-inputs-select'>
-                            <option value=''></option>
-                            <option value='S'>Sim</option>
-                            <option value='N'>Não</option>
+                            {pcd.map((pcd) => (
+                                <option key={pcd.id} value={pcd.id}>
+                                    {pcd.descricao}
+                                </option>
+                            ))}
                         </select><br />
                         <label htmlFor='tipo-PCD'>Tipo de dificiencia</label>
                         <select name='tipo-PCD' id='tipo-PCD' className='Cadastro-inputs-select'>
-                            <option value=''></option>
-                            <option value='fisica'>Deficiência física</option>
-                            <option value='auditiva'>Deficiência auditiva</option>
-                            <option value='visual'>Deficiência visual</option>
-                            <option value='intelectual'>Deficiência intelectual</option>
-                            <option value='psicossocial ou por saúde mental'>Deficiência psicossocial ou por saúde mental</option>
-                            <option value='múltipla'>Deficiência múltipla</option>
+                            {deficiencias.map((deficiencia) => (
+                                <option key={deficiencia.id} value={deficiencia.id}>
+                                    {deficiencia.descricao}
+                                </option>
+                            ))}
                         </select><br />
                         <label htmlFor="grupo">Grupo</label>
                         <select name='grupo' id='grupo' className='Cadastro-inputs-select'>
-                            <option value=''></option>
-                            <option value='caminhoneiros'>Caminhoneiros</option>
-                            <option value='gest-puer'>Gestantes e puérperas</option>
-                            <option value='gest-puer-Nrec'>Gestantes e puérperas não residentes de recife</option>
-                            <option value='idosos'>idosos</option>
-                            <option value='p-geral'>Público em geral</option>
-                            <option value='p-comorbidades'>Pessoa com comorbidades</option>
-                            <option value="p-viagem-ext">Pessoa com viagem para o exterior</option>
-                            <option value="p-situação-r">Pessoa em situação de rua</option>
-                            <option value="sesau-busca-atv">Sesau - Busca ativa</option>
-                            <option value="trab-assis-social">Trabalhadores da Assistencia Social</option>
-                            <option value="trab-educa">Trabalhadores da Educação</option>
-                            <option value="trab-limp-urb">Trabalhadores da limpeza urbana</option>
-                            <option value="trab-saude">Trabalhadores da saúde</option>
-                            <option value="trab-transp-aereo">Trabalhadores de transporte aéreo</option>
-                            <option value="trab-transp-aqua">Trabalhadores de transporte aquaviário</option>
-                            <option value="trab-transp-rodo">Trabalhadores de transporte rodoviário</option>
-                            <option value="trab-transp-ferro-metro">Trabalhadores de transporte metroviário e ferroviário</option>
-                            <option value="trab-indust-banc">Trabalhadores industriais e bancarios</option>
-                            <option value="trab-portuario">Trabalhadores portuarios</option>
-                            <option value="outros">outros</option>
+                            {grupos.map((grupo) => (
+                                <option key={grupo.id} value={grupo.value}>
+                                    {grupo.descricao}
+                                </option>
+                            ))}
                         </select><br />
                     </div>
                 </div>{/*Pesquisa social fim*/}
