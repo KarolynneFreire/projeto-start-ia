@@ -1,0 +1,38 @@
+.consulta-pesquisa {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 3vw;
+}
+
+.input-pesquisa {
+    height: 5vh;
+    width: 15vw;
+    border: 3px solid rgba(194, 133, 12, 1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+    margin-left: 1vw;
+    margin-top: 2vh;
+}
+
+#nome {
+    width: 25vw;
+}
+
+.dados-pessoa {
+    margin: 2vw;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    border: 2px solid #00000094;
+    padding: 1vh;
+}
+
+
+.btn-pessoa {
+    cursor: pointer;
+    border: none;
+    display: flex;
+    align-items: baseline;
+}
+
+.btn-pessoa h2{
+}

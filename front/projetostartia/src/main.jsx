@@ -17,7 +17,7 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "/start-projeto/",
+        path: "/",
         element: <Home />, // Define a rota para Home como default para "/start-projeto/"
       },
       {
