@@ -6,18 +6,15 @@
       const cardsData = [
         {
           number: "01",
-          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-          buttonText: "Read More"
+          text: "Cadastre uma pessoa e veja se ela é vulnerável ou não.",
         },
         {
           number: "02",
-          text: "Sed do eiusmod tempor incididunt ut labore et dolore magna.",
-          buttonText: "Read More"
+          text: "Pesquise pessoas por nome para ter mais detalhes.",
         },
         {
           number: "03",
-          text: "Aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
-          buttonText: "Read More"
+          text: "Visualise graficos sobre demanda e ganhe produtividade.",
         }
       ];
     
@@ -26,7 +23,6 @@
           {cardsData.map((card, index) => (
             <div key={index} className="card">
               <div className="card-header">
-                {/* Colocando o nome "Passo" ao lado do número */}
                 <h1>
                   {card.number}
                 </h1>
