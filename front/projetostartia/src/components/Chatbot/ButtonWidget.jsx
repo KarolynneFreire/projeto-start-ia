@@ -1,26 +1,21 @@
 import React from 'react';
+import axios from 'axios'; // Axios for API requests
 
 const ButtonWidget = (props) => {
+
   // Options for the buttons with corresponding decision logic
   const options = [
     { text: 'Vulnerável', handler: () => handleVulnerableOption(), id: 1 },
     { text: 'Cadastrar', handler: () => handleRegisterOption(), id: 2 },
-    { text: 'Personalizar', handler: () => handleCustomOption(), id: 3 },
+    { text: 'Perguntas Frequentes', handler: () => handleFaqOption(), id: 3 },
   ];
 
-  // Function to handle the "Vulnerável" option, with a pre-modeled API call
+  // Function to handle the "Vulnerável" option with Axios for API call
   const handleVulnerableOption = () => {
-    // Example of a pre-modeled API call (adjust the URL and details as needed)
-    fetch('https://api.example.com/vulnerable-endpoint', {
-      method: 'GET', // or 'POST', 'PUT', etc. depending on the API
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-      .then(response => response.json())
-      .then(data => {
-        console.log('API response:', data); // You can handle the API response here
-        const message = `API chamada com sucesso. Dados recebidos: ${JSON.stringify(data)}`;
+    axios.get('http://127.0.0.1:8000/v1/api/usuarios/?skip=0&limit=100')
+      .then(response => {
+        const data = response.data;
+        const message = `API chamada com sucesso. Usuários recebidos: ${data.length}`;
         props.actionProvider.createChatBotMessage(message);
       })
       .catch(error => {
@@ -31,13 +26,22 @@ const ButtonWidget = (props) => {
 
   // Function to handle the "Cadastrar" option, guiding to the registration page
   const handleRegisterOption = () => {
-    const registerUrl = 'http://localhost:5173/start-projeto/cadastro'; // Replace with your actual registration page URL
+    const registerUrl = 'https://seusite.com/cadastro'; // Replace with your actual registration page URL
     window.location.href = registerUrl;
   };
 
-  // Function for the "Personalizar" option, currently left empty for future customization
-  const handleCustomOption = () => {
-    // Leave this function blank for future customization
+  // Function to handle the "Perguntas Frequentes" option
+  const handleFaqOption = () => {
+    const faqTemplate = [
+      { question: "O que é vulnerabilidade?", answer: "Vulnerabilidade se refere a uma condição de risco elevado." },
+      { question: "Como posso me cadastrar?", answer: "Você pode se cadastrar acessando a página de cadastro." },
+      { question: "Quem tem direito?", answer: "Qualquer pessoa em situação de vulnerabilidade social." },
+    ];
+    
+    faqTemplate.forEach(item => {
+      const message = `${item.question} - ${item.answer}`;
+      props.actionProvider.createChatBotMessage(message);
+    });
   };
 
   // Render buttons with their styles and handlers

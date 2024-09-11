@@ -2,7 +2,7 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import './App.css';
 import Navbar from './assets/components/Navbar';
-import ChatbotComponent from './Chatbot/ChatbotComponent.jsx'; // Caminho corrigido
+import ChatbotComponent from './components/ChatbotComponent.jsx'; // Caminho corrigido
 
 function App() {
 

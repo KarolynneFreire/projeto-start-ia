@@ -9,7 +9,7 @@ const botName = 'Assistente';
 const config = {
   botName: botName,
   initialMessages: [
-    createChatBotMessage(`Olá, me chamo ${botName}. O que você gostaria de pesquisar hoje?`, {
+    createChatBotMessage(`Olá, me chamo ${botName}. em que posso te ajudar hoje?`, {
       widget: "learningOptions",
     }),
   ],

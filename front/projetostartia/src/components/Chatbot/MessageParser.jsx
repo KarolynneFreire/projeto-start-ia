@@ -13,8 +13,16 @@ const MessageParser = ({ children, actions }) => {
       actions.handleDog();
     }
 
+    if (message.includes('faq') || message.includes('perguntas')) {
+      actions.handleFaq();  // Trigger FAQ flow
+    }
+
     if (message.includes('messages')) {
       actions.handleGetMessages();  // Action to retrieve and display saved messages
+    }
+
+    if (message.includes('sair')) {
+      actions.handleExitFlow();  // Global exit handler
     }
   };
 

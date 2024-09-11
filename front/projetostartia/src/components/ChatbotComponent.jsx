@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { Chatbot } from 'react-chatbot-kit';
 import Draggable from 'react-draggable';
 import 'react-chatbot-kit/build/main.css';
-import './Chatbot.css'; 
+import './Chatbot/Chatbot.css'; 
 import botIcon from '../assets/icone_chatbot.png';
-import ActionProvider from './ActionProvider';
-import MessageParser from './MessageParser';
-import config from './Config';
+import ActionProvider from './Chatbot/ActionProvider';
+import MessageParser from './Chatbot/MessageParser';
+import config from './Chatbot/Config';
 
 function ChatbotComponent() {
   const [isOpen, setIsOpen] = useState(false);
