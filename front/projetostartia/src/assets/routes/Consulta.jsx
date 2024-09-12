@@ -22,13 +22,13 @@ function Consulta() {
 
   return (
     <div>
-      <div className='consulta-pesquisa'>
+      {/* <div className='consulta-pesquisa'>
         <input type="search" id='nome' className='input-pesquisa' />
         <input type="search" name="" id="" className='input-pesquisa' />
         <input type="search" name="" id="" className='input-pesquisa' />
         <input type="search" name="" id="" className='input-pesquisa' />
         <input type="search" name="" id="" className='input-pesquisa' />
-      </div>
+      </div> */}
       <div className="user-container">
         {posts.map(post => (
           <button key={post.id} className='btn-pessoa'>
