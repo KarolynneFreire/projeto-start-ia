@@ -210,7 +210,8 @@ const Cadastro = () => {
         e.preventDefault();
         if (nomeCompleto && dataNascimento && email && cpf && rg) {
             const dados = {
-                nomeCompleto, dataNascimento, idade, email, nomeMae, cpf, rg, telefone, cep, cidade, bairro, rua, numeroEndereco, cursoSuperior, emprego, renda, numeroMoradores
+                nomeCompleto, email, cpf, dataNascimento, sexos, rg, idade, nomeMae, telefone, cep, cidade, rua, uf, bairro, numeroEndereco, escolaridades, racaCor,
+                estadosCivil, pcd, deficiencias, cursoSuperior, renda, emprego, numeroMoradores, grupo
             };
             try {
                 const response = await axios.post('http://localhost:4000/dados', dados);

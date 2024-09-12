@@ -1,25 +1,6 @@
 {
   "dados": [
-    {
-      "id": "bf5b",
-      "nomeCompleto": "lob",
-      "dataNascimento": "2003-10-05",
-      "idade": 20,
-      "email": "ed@gmail.com",
-      "mae": "zefa",
-      "cpf": "70538321474",
-      "rg": "9735397",
-      "telefone": "81996458059",
-      "cep": "54756320",
-      "cidade": "Camaragibe",
-      "bairro": "Tabatinga",
-      "rua": "Rua Amaro Coutinho",
-      "numEndereco": "250",
-      "curso": "ADS",
-      "emprego": "DES",
-      "renda": "00",
-      "qtdMoradores": "2"
-    }
+    
   ],
   "estados": [
     { "sigla": "", "nome": "" },
