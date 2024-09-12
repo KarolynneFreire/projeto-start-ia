@@ -282,12 +282,12 @@
   ],
   "pcd": [
     {
-      "value": "nao",
+      "value": "sim",
       "descricao": "Não",
       "id": "1092"
     },
     {
-      "value": "sim",
+      "value": "nao",
       "descricao": "Sim",
       "id": "7a19"
     }

@@ -237,38 +237,45 @@ const Cadastro = () => {
             const faixaEtaria = determinarFaixaEtaria(idade);
             const cpfApenasNumeros = cpf.replace(/\D/g, '');
             const rgApenasnumeros = rg.replace(/\D/g, '');
+            const cepApenasNumeros = parseInt(cep.replace(/\D/g, ''), 10); 
+            const numeroEnderecoNumeros = parseInt(numeroEndereco);
+            const rendaPfloat = parseFloat(renda);
+            const numeroMoradoresNumeros = parseInt(numeroMoradores);
+            
+            
 
             const dados = {
                 nomeCompleto,
                 email,
                 cpf: cpfApenasNumeros,
                 dataNascimento,
+                sexo: sexosSelecionado, // Correspondente a "sexo"
                 rg: rgApenasnumeros,
                 idade,
-                faixaEtaria,
                 nomeMae,
                 telefone,
-                cep,
+                cep: cepApenasNumeros,
                 cidade,
                 rua,
-                bairro,
-                numeroEndereco,
-                cursoSuperior,
-                renda,
-                emprego,
-                numeroMoradores,
                 uf: ufSelecionado,
-                sexos: sexosSelecionado,
-                escolaridades: escolaridadesSelecionado,
+                bairro,
+                numeroEndereco: numeroEnderecoNumeros,
+                escolaridade: escolaridadesSelecionado, // Correspondente a "escolaridade"
                 racaCor: racaCorSelecionado,
-                estadosCivil: estadosCivilSelecionado,
-                deficiencias: deficienciasSelecionado,
-                pcd: pcdSelecionado,
-                grupos: gruposSelecionado
+                faixaEtaria,
+                estadoCivil: estadosCivilSelecionado, // Correspondente a "estadoCivil"
+                pcd: pcdSelecionado === 'sim' ? true : false,
+                tipoPcd: deficienciasSelecionado, // Correspondente a "tipoPcd"
+                cursoSuperior,
+                renda: rendaPfloat,
+                emprego,
+                numeroMoradores: numeroMoradoresNumeros,
+                grupo: gruposSelecionado // Correspondente a "grupo"
             };
-            const jsonString = JSON.stringify(dados);
+            
+            // const jsonString = JSON.stringify(dados);
             try {
-                const response = await axios.post('http://localhost:4000/dados', jsonString);
+                const response = await axios.post('http://127.0.0.1:8000/v1/api/usuarios/', dados);
                 console.log('sucesso', response.data)
 
                 setModalOpen(true);
