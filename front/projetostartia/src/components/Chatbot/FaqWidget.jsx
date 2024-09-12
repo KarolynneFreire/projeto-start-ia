@@ -2,10 +2,54 @@ import React from 'react';
 
 const FaqWidget = () => {
   const faqTemplate = [
-    { question: "O que é vulnerabilidade?", answer: "Vulnerabilidade se refere a uma condição de risco elevado." },
-    { question: "Como posso me cadastrar?", answer: "Você pode se cadastrar acessando a página de cadastro." },
-    { question: "Quem tem direito?", answer: "Qualquer pessoa em situação de vulnerabilidade social." },
-    { question: "Como anda??", answer: "Qualquer pessoa em situação de vulnerabilidade social." },
+    { 
+      question: "O que é vulnerabilidade social?", 
+      answer: "Vulnerabilidade social ocorre quando pessoas enfrentam dificuldades para acessar direitos básicos, como saúde, educação e moradia, devido à sua condição socioeconômica."
+    },
+    { 
+      question: "Como posso cadastrar um usuário?", 
+      answer: (
+        <>
+          Você pode cadastrar os usuários acessando a página de cadastro ou clicando{" "}
+          <a href="http://localhost:5173/start-projeto/cadastro" style={styles.link} target="_blank" rel="noopener noreferrer">aqui</a>.
+        </>
+      ),
+    },
+    { 
+      question: "Como posso consultar as informações dos usuários pelo chat?", 
+      answer: (
+        <>
+          Você pode consultar as informações dos usuários utilizando 3 métodos diferentes: CPF, ID ou Nome Cadastrado. 
+          Aqui estão os comandos que você pode usar:
+          <div style={styles.commandList}>
+            <div style={styles.commandItem}>
+              <strong>Consultar usuário pelo ID</strong>: Para consultar um usuário pelo ID, digite: <code>consultar usuário pelo id</code>
+            </div>
+            <div style={styles.commandItem}>
+              <strong>Consultar usuário pelo Nome</strong>: Para consultar um usuário pelo nome, digite: <code>consultar usuário pelo nome</code>
+            </div>
+            <div style={styles.commandItem}>
+              <strong>Consultar usuário pelo CPF</strong>: Para consultar um usuário pelo CPF, digite: <code>consultar usuário pelo cpf</code>
+            </div>
+          </div>
+          <p>Exemplo de como prosseguir:</p>
+          <ol style={styles.exampleList}>
+            <li>
+              <strong>Usuário:</strong> Digite: <code>consultar usuário pelo id</code> e pressione enviar.
+            </li>
+            <li>
+              <strong>Bot:</strong> O bot irá pedir que você digite o ID do usuário.
+            </li>
+            <li>
+              <strong>Usuário:</strong> Responda com o ID desejado, por exemplo: <code>12345</code>.
+            </li>
+            <li>
+              <strong>Bot:</strong> O bot retornará as informações do usuário correspondente.
+            </li>
+          </ol>
+        </>
+      ),
+    },
   ];
 
   return (
@@ -21,7 +65,7 @@ const FaqWidget = () => {
   );
 };
 
-// Styles with better organization and layout for chat size
+// Styles for a responsive and visually appealing layout
 const styles = {
   faqContainer: {
     padding: '10px',
@@ -30,7 +74,7 @@ const styles = {
     width: '100%',
     maxWidth: '350px', // Adjusted for smaller chat window
     margin: '0 auto',
-    fontSize: '14px', // Reduced font size for smaller chat box
+    fontSize: '14px',
   },
   header: {
     textAlign: 'left',
@@ -52,6 +96,26 @@ const styles = {
   answer: {
     fontSize: '13px',
     lineHeight: '1.5',
+  },
+  commandList: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '10px',
+    marginTop: '10px',
+  },
+  commandItem: {
+    padding: '8px',
+    backgroundColor: '#E0F7FA',
+    borderRadius: '5px',
+  },
+  exampleList: {
+    marginTop: '10px',
+    paddingLeft: '20px',
+  },
+  link: {
+    color: '#00A9A5',
+    textDecoration: 'underline',
+    cursor: 'pointer',
   },
 };
 
