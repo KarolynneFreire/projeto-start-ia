@@ -27,6 +27,3 @@ const PreverVulnerabilidade = ({ dadosUsuario }) => {
 };
 
 export default PreverVulnerabilidade;
-
-
-export default PreverVulnerabilidade;

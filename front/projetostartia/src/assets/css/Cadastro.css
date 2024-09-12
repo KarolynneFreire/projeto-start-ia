@@ -7,7 +7,7 @@
 
 .Cadastro-inputs-select{
     height: 6vh;
-    width: 23.5vw;
+    width: 24.5vw;
     border: 3px solid rgba(194, 133, 12, 1);
     border-radius: 5px;
 }
@@ -57,28 +57,45 @@
 .Cadastro select{
     padding-left: 1vw;
 }
-.form-btn-cadastro {
-    height: 7vh;
-    width: 15vw;
-    border: solid 1px black;
-    background-color: rgb(89, 148, 132);
-    color: white;
-    border-radius: 30px;
-    margin-left: 42.5%;
-    margin-bottom: 5vh;
-    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
-    cursor: pointer;
+
+.btn-enviar {
+    display: flex;
+    justify-content: center;
+    margin: 5vh;
 }
 
-.form-btn-cadastro:hover{
-    animation: pulse 1s ease-in-out ;
+.button-real {
+    background: rgb(89, 148, 132); /* Fundo semitransparente */
+    color: white; /* Texto branco */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Borda semitransparente */
+    padding: 12px 24px; /* Espaçamento interno */
+    font-size: 16px; /* Tamanho da fonte */
+    border-radius: 8px; /* Bordas arredondadas */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    backdrop-filter: blur(10px); /* Efeito de desfoque */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidade */
+    transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.2s ease; /* Transição suave */
   }
   
-  @keyframes pulse {
-    50% {
-      box-shadow: 0 0 10px rgb(89, 148, 132);
-      transform: scale(1.05);
-    }
+  /* Efeito de pressionar */
+  .button-real:active {
+    transform: translateY(4px); /* Move o botão para baixo */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); /* Sombra mais sutil ao ser pressionado */
+  }
+  
+  /* Efeito de hover */
+  .button-real:hover {
+    background: rgb(4, 59, 45); /* Fundo semitransparente */
+  }
+  
+  /* Estilo de foco */
+  .button-real:focus {
+    outline: none; /* Remove a borda padrão de foco */
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2); /* Brilho ao redor no foco */
   }
 
-  
+  .erro {
+    display: flex;
+    justify-content: center;
+    color: rgb(230, 14, 14);
+  }

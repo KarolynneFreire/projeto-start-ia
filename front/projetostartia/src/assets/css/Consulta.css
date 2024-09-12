@@ -16,6 +16,13 @@
   border-radius: 4px;
   margin-left: 1vw;
   margin-top: 2vh;
+  height: 5vh;
+  width: 15vw;
+  border: 3px solid rgba(194, 133, 12, 1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  margin-left: 1vw;
+  margin-top: 2vh;
 }
 
 #nome {

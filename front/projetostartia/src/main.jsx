@@ -9,6 +9,7 @@ import Home from './assets/routes/Home.jsx'
 import ErrorPage from './assets/routes/Error.jsx';
 import Cadastro from './assets/routes/Cadastro.jsx';
 import Consulta from './assets/routes/Consulta.jsx';
+import Acessibilidade from './assets/routes/Acessibilidade.jsx';
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: "/start-projeto/consulta",
         element: <Consulta />,
+      },
+      {
+        path: "/start-projeto/acessibilidade",
+        element: <Acessibilidade />,
       },
     ],
   },

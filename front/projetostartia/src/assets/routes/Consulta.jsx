@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 import '../css/Consulta.css'
+import UserCard from './../../components/UserCard/UserCard';
 
 function Consulta() {
 
@@ -22,6 +23,7 @@ function Consulta() {
 
   return (
     <div>
+      {/*<UserCard></UserCard>*/}
       <div className='consulta-pesquisa'>
         <input type="search" id='nome' className='input-pesquisa' />
         <input type="search" name="" id="" className='input-pesquisa' />
@@ -29,6 +31,7 @@ function Consulta() {
         <input type="search" name="" id="" className='input-pesquisa' />
         <input type="search" name="" id="" className='input-pesquisa' />
       </div>
+      <div className="user-container">
       <div className="user-container">
         {posts.map(post => (
           <button key={post.id} className='btn-pessoa'>
