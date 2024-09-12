@@ -1,6 +1,6 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-
+import ChatbotComponent from './components/ChatbotComponent'
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
 
@@ -10,7 +10,7 @@ function App() {
       <Navbar />
       {/* O componente Home será renderizado pela rota, então remova-o daqui */}
       <Outlet /> {/* Isso renderiza as rotas filhas (Home, Cadastro, Consulta, etc.) */}
-      {/* <ChatBot flow={flow} /> */}
+      <ChatbotComponent /> {/* O ChatbotComponent deve estar dentro do ChatbotProvider */}
     </div>
 
   );
