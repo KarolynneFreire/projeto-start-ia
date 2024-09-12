@@ -1,10 +1,9 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 import './App.css';
-import Navbar from './assets/components/Navbar';
+import Navbar from './components/Navbar/Navbar.jsx';
 import Footer from './components/Footer/Footer';
 import ChatbotComponent from './components/ChatbotComponent.jsx'; // Caminho corrigido
-import { WidgetManagerProvider } from './components/Chatbot/WidgetManagerContext .jsx'; // Import the WidgetManagerContext provider
 
 function App() {
   return (

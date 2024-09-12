@@ -358,25 +358,11 @@ const Cadastro = () => {
                             onChange={(e) => setnomeMae(e.target.value)}
                         /><br />
                     </div>
-                    <div className='container-products'> {/*Cpf/Rg/Telefone*/}
-                        <label htmlFor='cpf'>Cpf*</label>
-                        <InputMask
-                            mask="999.999.999-99"
-                            value={cpf}
-                            onChange={(e) => setCpf(e.target.value)}
-                            className='Cadastro-inputs'>
-                            {(inputProps) => <input {...inputProps} type="text" id="cpf" />}
-                        </InputMask>
-                        <br />
-                        <label htmlFor='RG'>RG*</label>
-                        <InputMask
-                            mask="9.999.999"
-                            value={rg}
-                            onChange={(e) => setRg(e.target.value)}
-                            className='Cadastro-inputs'>
-                            {(inputProps) => <input {...inputProps} type="text" id="rg" />}
-                        </InputMask>
-                        <br />
+                    <div className='container-products'>
+                        <label htmlFor='cpf'>CPF</label>
+                        <input type='number' className='Cadastro-inputs' id='cpf' placeholder='insira seu CPF' /><br />
+                        <label htmlFor='RG'>RG</label>
+                        <input type='number' className='Cadastro-inputs' id='rg' placeholder='insira o seu RG' /><br />
                         <label htmlFor='Num-contato'>Número para contato</label>
                         <InputMask
                             mask="(99)99999-9999"
