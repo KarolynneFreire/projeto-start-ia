@@ -35,8 +35,8 @@ function Consulta() {
             <h2>{post.nomeCompleto}</h2>
             <p><strong>CPF:</strong> {post.cpf}</p>
             <p><strong>Email:</strong> {post.email}</p>
-            <p className={`status ${post.isVulneravel ? 'vulneravel' : 'nao-vulneravel'}`}>
-              <strong>Status:</strong> {post.isVulneravel ? 'Vulnerável' : 'Não Vulnerável'}
+            <p className={`status ${post.isVulneravel ? 'vulneravel' : 'nao-vulneravel'}`} >
+              <strong>Situação:</strong> <div className='div-vul'>{post.isVulneravel ? 'Vulnerabilidade' : 'Não Vulnerável'}</div>
             </p>
           </button>
         ))}
