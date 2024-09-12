@@ -41,7 +41,6 @@ const Cadastro = () => {
     const [numeroMoradores, setnumeroMoradores] = useState('');
     const [modalOpen, setModalOpen] = useState(false);
     const [erro, setErro] = useState('');
-    const [mensagemSucesso, setMensagemSucesso] = useState('');
 
 
     const cidade = user.city
@@ -244,7 +243,6 @@ const Cadastro = () => {
             const numeroMoradoresNumeros = parseInt(numeroMoradores);
             
             
-            
 
             const dados = {
                 nomeCompleto,
@@ -279,7 +277,9 @@ const Cadastro = () => {
             try {
                 const response = await axios.post('http://127.0.0.1:8000/v1/api/usuarios/', dados);
                 console.log('sucesso', response.data)
-                setMensagemSucesso('Formulário enviado com sucesso!');
+
+                setModalOpen(true);
+
 
                 setTimeout(() => {
                     window.location.reload();
@@ -293,6 +293,9 @@ const Cadastro = () => {
         }
     };
 
+    const closeModal = () => {
+        setModalOpen(false);
+    };
 
     return (
         <div className='Cadastro'>
@@ -358,11 +361,25 @@ const Cadastro = () => {
                             onChange={(e) => setnomeMae(e.target.value)}
                         /><br />
                     </div>
-                    <div className='container-products'>
-                        <label htmlFor='cpf'>CPF</label>
-                        <input type='number' className='Cadastro-inputs' id='cpf' placeholder='insira seu CPF' /><br />
-                        <label htmlFor='RG'>RG</label>
-                        <input type='number' className='Cadastro-inputs' id='rg' placeholder='insira o seu RG' /><br />
+                    <div className='container-products'> {/*Cpf/Rg/Telefone*/}
+                        <label htmlFor='cpf'>Cpf*</label>
+                        <InputMask
+                            mask="999.999.999-99"
+                            value={cpf}
+                            onChange={(e) => setCpf(e.target.value)}
+                            className='Cadastro-inputs'>
+                            {(inputProps) => <input {...inputProps} type="text" id="cpf" />}
+                        </InputMask>
+                        <br />
+                        <label htmlFor='RG'>RG*</label>
+                        <InputMask
+                            mask="9.999.999"
+                            value={rg}
+                            onChange={(e) => setRg(e.target.value)}
+                            className='Cadastro-inputs'>
+                            {(inputProps) => <input {...inputProps} type="text" id="rg" />}
+                        </InputMask>
+                        <br />
                         <label htmlFor='Num-contato'>Número para contato</label>
                         <InputMask
                             mask="(99)99999-9999"
@@ -560,7 +577,6 @@ const Cadastro = () => {
                     </div>
                 </div>{/*Pesquisa social fim*/}
                 {erro && <div className="erro">{erro}</div>}
-                {mensagemSucesso && (<div className="sucesso">{mensagemSucesso}</div>)}
                 <div className='btn-enviar'>
                     <button type="submit"
                         className='button-real'
