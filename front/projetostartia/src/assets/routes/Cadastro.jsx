@@ -41,6 +41,7 @@ const Cadastro = () => {
     const [numeroMoradores, setnumeroMoradores] = useState('');
     const [modalOpen, setModalOpen] = useState(false);
     const [erro, setErro] = useState('');
+    const [mensagemSucesso, setMensagemSucesso] = useState('');
 
 
     const cidade = user.city
@@ -243,6 +244,7 @@ const Cadastro = () => {
             const numeroMoradoresNumeros = parseInt(numeroMoradores);
             
             
+            
 
             const dados = {
                 nomeCompleto,
@@ -277,9 +279,7 @@ const Cadastro = () => {
             try {
                 const response = await axios.post('http://127.0.0.1:8000/v1/api/usuarios/', dados);
                 console.log('sucesso', response.data)
-
-                setModalOpen(true);
-
+                setMensagemSucesso('Formulário enviado com sucesso!');
 
                 setTimeout(() => {
                     window.location.reload();
@@ -293,9 +293,6 @@ const Cadastro = () => {
         }
     };
 
-    const closeModal = () => {
-        setModalOpen(false);
-    };
 
     return (
         <div className='Cadastro'>
@@ -577,6 +574,7 @@ const Cadastro = () => {
                     </div>
                 </div>{/*Pesquisa social fim*/}
                 {erro && <div className="erro">{erro}</div>}
+                {mensagemSucesso && (<div className="sucesso">{mensagemSucesso}</div>)}
                 <div className='btn-enviar'>
                     <button type="submit"
                         className='button-real'

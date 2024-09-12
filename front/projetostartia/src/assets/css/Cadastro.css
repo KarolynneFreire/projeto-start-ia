@@ -99,3 +99,9 @@
     justify-content: center;
     color: rgb(230, 14, 14);
   }
+
+  .sucesso {
+    display: flex;
+    justify-content: center;
+    color: rgb(20, 111, 61);
+}
