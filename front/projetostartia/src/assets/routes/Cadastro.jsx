@@ -66,7 +66,7 @@ const Cadastro = () => {
                         <input type='text' className='Cadastro-inputs' id='mae' placeholder='insira o nome da mãe' /><br />
                     </div>
                     <div className='container-products'>
-                        <label htmlFor='cpf'>Cpf</label>
+                        <label htmlFor='cpf'>CPF</label>
                         <input type='number' className='Cadastro-inputs' id='cpf' placeholder='insira seu CPF' /><br />
                         <label htmlFor='RG'>RG</label>
                         <input type='number' className='Cadastro-inputs' id='rg' placeholder='insira o seu RG' /><br />
