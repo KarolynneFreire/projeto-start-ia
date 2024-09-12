@@ -93,3 +93,9 @@
     outline: none; /* Remove a borda padrão de foco */
     box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2); /* Brilho ao redor no foco */
   }
+
+  .erro {
+    display: flex;
+    justify-content: center;
+    color: rgb(230, 14, 14);
+  }

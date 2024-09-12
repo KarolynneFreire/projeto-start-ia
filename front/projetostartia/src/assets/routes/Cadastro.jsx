@@ -1,23 +1,30 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
+import InputMask from 'react-input-mask';
 
 import '../css/Cadastro.css'
-
 
 
 const Cadastro = () => {
 
     const [cep, setCep] = useState('');
-    const [estados, setEstados] = useState([]);
-    const [estadoSelecionado, setEstadoSelecionado] = useState('');
+    const [uf, setUf] = useState([]);
+    const [ufSelecionado, setUfSelecionado] = useState('');
     const [sexos, setSexos] = useState([]);
+    const [sexosSelecionado, setSexosSelecionados] = useState([]);
     const [escolaridades, setEscolaridades] = useState([]);
+    const [escolaridadesSelecionado, setEscolaridadesSelecionado] = useState([]);
     const [racaCor, setRacaCor] = useState([]);
+    const [racaCorSelecionado, setRacaCorSelecionado] = useState([]);
     const [pcd, setPcd] = useState([]);
+    const [pcdSelecionado, setPcdSelecionado] = useState([]);
     const [deficiencias, setDeficiencias] = useState([]);
+    const [deficienciasSelecionado, setDeficienciasSelecionado] = useState([]);
     const [estadosCivil, setEstadosCivil] = useState([]);
+    const [estadosCivilSelecionado, setEstadosCivilSelecionado] = useState([]);
     const [grupos, setGrupos] = useState([]);
+    const [gruposSelecionado, setGruposSelecionado] = useState([]);
     const [user, setUser] = useState({});
     const [nomeCompleto, setNomeCompleto] = useState('');
     const [dataNascimento, setDataNascimento] = useState('');
@@ -32,6 +39,13 @@ const Cadastro = () => {
     const [emprego, setEmprego] = useState('');
     const [renda, setRenda] = useState('');
     const [numeroMoradores, setnumeroMoradores] = useState('');
+    const [modalOpen, setModalOpen] = useState(false);
+    const [erro, setErro] = useState('');
+
+
+    const cidade = user.city
+    const bairro = user.neighborhood
+    const rua = user.street
 
     const calcularIdade = (dataNasc) => {
         const hoje = new Date();
@@ -55,37 +69,38 @@ const Cadastro = () => {
         setCep(newCEP);
     };
 
-    const calcularFaixaEtaria = (dataNasc) => {
-        const idade = calcularIdade(dataNasc);
-    
-        if (idade >= 0 && idade <= 11) {
-            return 'Infantil';
-        } else if (idade >= 12 && idade <= 17) {
-            return 'Adolescente';
-        } else if (idade >= 18 && idade <= 59) {
-            return 'Adulto';
-        } else if (idade >= 60) {
-            return 'Idoso';
-        } else {
-            return 'Faixa etária desconhecida';
-        }
+    const determinarFaixaEtaria = (idade) => {
+        if (idade <= 19) return "0 a 19 anos";
+        if (idade <= 24) return "20 a 24 anos";
+        if (idade <= 29) return "25 a 29 anos";
+        if (idade <= 34) return "30 a 34 anos";
+        if (idade <= 39) return "35 a 39 anos";
+        if (idade <= 44) return "40 a 44 anos";
+        if (idade <= 49) return "45 a 49 anos";
+        if (idade <= 54) return "50 a 54 anos";
+        if (idade <= 59) return "55 a 59 anos";
+        if (idade <= 64) return "60 a 64 anos";
+        if (idade <= 69) return "65 a 69 anos";
+        if (idade <= 74) return "70 a 74 anos";
+        if (idade <= 79) return "75 a 79 anos";
+        if (idade <= 84) return "80 a 84 anos";
+        if (idade <= 89) return "85 a 89 anos";
+        if (idade <= 94) return "90 a 94 anos";
+        if (idade <= 99) return "95 a 99 anos";
+        return "100 anos +";
     };
 
-    const cidade = user.city
-    const bairro = user.neighborhood
-    const rua = user.street
-
-    useEffect(() => {
+    useEffect(() => { //cep api
         const fetchUserByCEP = async () => {
             try {
                 const url = `https://brasilapi.com.br/api/cep/v1/${cep}`;
                 const response = await axios.get(url);
                 setUser(response.data);
-                const estadoEncontrado = estados.find(
+                const ufEncontrado = uf.find(
                     (estado) => estado.sigla.toUpperCase() === response.data.state.toUpperCase()
                 );
-                if (estadoEncontrado) {
-                    setEstadoSelecionado(estadoEncontrado.sigla);
+                if (ufEncontrado) {
+                    setUfSelecionado(ufEncontrado.sigla);
                 }
 
                 console.log(response.data);
@@ -102,20 +117,20 @@ const Cadastro = () => {
         }
     }, [cep]);
 
-    useEffect(() => {
-        const fetchEstados = async () => {
+    useEffect(() => { //Uf api
+        const fetchUf = async () => {
             try {
-                const response = await axios.get('http://localhost:4000/estados');
-                setEstados(response.data);
+                const response = await axios.get('http://localhost:4000/uf');
+                setUf(response.data);
             } catch (error) {
-                console.error('Error fetching estados:', error);
+                console.error('Error fetching Uf:', error);
             }
         };
 
-        fetchEstados();
+        fetchUf();
     }, []);
 
-    useEffect(() => {
+    useEffect(() => { //sexo api
         const fetchSexos = async () => {
             try {
                 const response = await axios.get('http://localhost:4000/sexos');
@@ -128,7 +143,7 @@ const Cadastro = () => {
         fetchSexos();
     }, []);
 
-    useEffect(() => {
+    useEffect(() => { //escolaridade api
         const fetchEscolaridades = async () => {
             try {
                 const response = await axios.get('http://localhost:4000/escolaridades');
@@ -141,7 +156,7 @@ const Cadastro = () => {
         fetchEscolaridades();
     }, []);
 
-    useEffect(() => {
+    useEffect(() => { //racaCor api
         const fetchRacaCor = async () => {
             try {
                 const response = await axios.get('http://localhost:4000/racaCor');
@@ -154,7 +169,7 @@ const Cadastro = () => {
         fetchRacaCor();
     }, []);
 
-    useEffect(() => {
+    useEffect(() => { //pcd api
         const fetchPcd = async () => {
             try {
                 const response = await axios.get('http://localhost:4000/pcd');
@@ -167,7 +182,7 @@ const Cadastro = () => {
         fetchPcd();
     }, []);
 
-    useEffect(() => {
+    useEffect(() => { //deficiencias api
         const fetchDeficiencias = async () => {
             try {
                 const response = await axios.get('http://localhost:4000/deficiencias');
@@ -180,7 +195,7 @@ const Cadastro = () => {
         fetchDeficiencias();
     }, []);
 
-    useEffect(() => {
+    useEffect(() => { //grupos api
         const fetchGrupos = async () => {
             try {
                 const response = await axios.get('http://localhost:4000/grupos');
@@ -193,7 +208,7 @@ const Cadastro = () => {
         fetchGrupos();
     }, []);
 
-    useEffect(() => {
+    useEffect(() => { //estadoCivil api
         const fetchEstadosCivil = async () => {
             try {
                 const response = await axios.get('http://localhost:4000/estadosCivil');
@@ -206,23 +221,73 @@ const Cadastro = () => {
         fetchEstadosCivil();
     }, []);
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e) => { //envio de dados api
         console.log('teste')
         e.preventDefault();
+        setErro('');
+
         if (nomeCompleto && dataNascimento && email && cpf && rg) {
+            const idadeCalculada = calcularIdade(dataNascimento);
+
+            if (idadeCalculada > 120) {
+                setErro('Por favor, insira uma data de nascimento válida.');
+                return;
+            }
+
+            const faixaEtaria = determinarFaixaEtaria(idade);
+            const cpfApenasNumeros = cpf.replace(/\D/g, '');
+            const rgApenasnumeros = rg.replace(/\D/g, '');
+
             const dados = {
-                nomeCompleto, email, cpf, dataNascimento, sexos, rg, idade, nomeMae, telefone, cep, cidade, rua, uf, bairro, numeroEndereco, escolaridades, racaCor,
-                estadosCivil, pcd, deficiencias, cursoSuperior, renda, emprego, numeroMoradores, grupo
+                nomeCompleto,
+                email,
+                cpf: cpfApenasNumeros,
+                dataNascimento,
+                rg: rgApenasnumeros,
+                idade,
+                faixaEtaria,
+                nomeMae,
+                telefone,
+                cep,
+                cidade,
+                rua,
+                bairro,
+                numeroEndereco,
+                cursoSuperior,
+                renda,
+                emprego,
+                numeroMoradores,
+                uf: ufSelecionado,
+                sexos: sexosSelecionado,
+                escolaridades: escolaridadesSelecionado,
+                racaCor: racaCorSelecionado,
+                estadosCivil: estadosCivilSelecionado,
+                deficiencias: deficienciasSelecionado,
+                pcd: pcdSelecionado,
+                grupos: gruposSelecionado
             };
+            const jsonString = JSON.stringify(dados);
             try {
-                const response = await axios.post('http://localhost:4000/dados', dados);
+                const response = await axios.post('http://localhost:4000/dados', jsonString);
                 console.log('sucesso', response.data)
+
+                setModalOpen(true);
+
+
+                setTimeout(() => {
+                    window.location.reload();
+                }, 3000);
+
             } catch (error) {
                 console.error('error', error);
             }
         } else {
-            console.log('Por favor, preencha todos os campos obrigatórios.')
+            setErro('Por favor, preencha todos os campos obrigatórios, marcados com *');
         }
+    };
+
+    const closeModal = () => {
+        setModalOpen(false);
     };
 
     return (
@@ -232,8 +297,8 @@ const Cadastro = () => {
             <form onSubmit={handleSubmit} className='form-cadastro'>
                 <p>Dados Pessoais</p>
                 <span></span><br />
-                <div className='container'>{/*Dados Pessoais começo*/}
-                    <div className='container-products'>
+                <div className='container'> {/*Dados Pessoais começo*/}
+                    <div className='container-products'> {/*Nome/dataNasc/Idade*/}
                         <label htmlFor='nomeCompleto'>Nome*</label>
                         <input type='text'
                             className='Cadastro-inputs'
@@ -258,8 +323,8 @@ const Cadastro = () => {
                             readOnly
                         /><br />
                     </div>
-                    <div className='container-products'>
-                        <label htmlFor='email'>Email</label>
+                    <div className='container-products'> {/*Email/Sexo/NomeMae*/}
+                        <label htmlFor='email'>Email*</label>
                         <input type='email'
                             className='Cadastro-inputs'
                             id='email'
@@ -268,14 +333,19 @@ const Cadastro = () => {
                             onChange={(e) => setEmail(e.target.value)}
                         /><br />
                         <label htmlFor='sexo'>Sexo*</label>
-                        <select name='sexo' id='sexo' className='Cadastro-inputs-select'>
+                        <select name='sexo'
+                            id='sexo'
+                            className='Cadastro-inputs-select'
+                            value={sexosSelecionado}
+                            onChange={(e) => setSexosSelecionados(e.target.value)}
+                        ><option value="">Selecione uma opção</option>
                             {sexos.map((sexo) => (
-                                <option key={sexo.id} value={sexo.id}>
+                                <option key={sexo.value} value={sexo.value}>
                                     {sexo.descricao}
                                 </option>
                             ))}
                         </select><br />
-                        <label htmlFor='nomeMae'>Nome da mãe*</label>
+                        <label htmlFor='nomeMae'>Nome da mãe</label>
                         <input type='text'
                             className='Cadastro-inputs'
                             id='nomeMae'
@@ -284,39 +354,42 @@ const Cadastro = () => {
                             onChange={(e) => setnomeMae(e.target.value)}
                         /><br />
                     </div>
-                    <div className='container-products'>
-                        <label htmlFor='cpf'>Cpf</label>
-                        <input type='number'
-                            className='Cadastro-inputs'
-                            id='cpf'
-                            placeholder='insira seu CPF'
+                    <div className='container-products'> {/*Cpf/Rg/Telefone*/}
+                        <label htmlFor='cpf'>Cpf*</label>
+                        <InputMask
+                            mask="999.999.999-99"
                             value={cpf}
                             onChange={(e) => setCpf(e.target.value)}
-                        /><br />
-                        <label htmlFor='RG'>RG</label>
-                        <input type='number'
-                            className='Cadastro-inputs'
-                            id='rg'
-                            placeholder='insira o seu RG'
+                            className='Cadastro-inputs'>
+                            {(inputProps) => <input {...inputProps} type="text" id="cpf" />}
+                        </InputMask>
+                        <br />
+                        <label htmlFor='RG'>RG*</label>
+                        <InputMask
+                            mask="9.999.999"
                             value={rg}
                             onChange={(e) => setRg(e.target.value)}
-                        /><br />
+                            className='Cadastro-inputs'>
+                            {(inputProps) => <input {...inputProps} type="text" id="rg" />}
+                        </InputMask>
+                        <br />
                         <label htmlFor='Num-contato'>Número para contato</label>
-                        <input type='number'
-                            className='Cadastro-inputs'
-                            id='telefone'
-                            placeholder='insira o número para contato'
+                        <InputMask
+                            mask="(99)99999-9999"
                             value={telefone}
                             onChange={(e) => setTelefone(e.target.value)}
-                        /><br />
+                            className='Cadastro-inputs'>
+                            {(inputProps) => <input {...inputProps} type="text" id="telefone" />}
+                        </InputMask>
+                        <br />
                     </div>
                 </div>{/*Dados Pessoais fim*/}
 
                 <p>Endereço</p>
                 <span></span><br />
                 <div className='container'>{/*Endereço começo*/}
-                    <div className='container-products'>
-                        <label htmlFor='cep'>Cep</label>
+                    <div className='container-products'> {/*Cep/Uf*/}
+                        <label htmlFor='cep'>Cep</label> {/*Cep*/}
                         <input type='number'
                             className='Cadastro-inputs'
                             id='cep'
@@ -324,21 +397,21 @@ const Cadastro = () => {
                             value={cep}
                             onChange={handleCEPChange}
                         /><br />
-                        <label htmlFor='Estado'>Estado</label>
+                        <label htmlFor='Estado'>Estado</label>{/*Uf*/}
                         <select name='uf'
                             id='uf'
                             className='Cadastro-inputs-select'
-                            value={estadoSelecionado}
-                            onChange={(e) => setEstadoSelecionado(e.target.value)}
-                        >
-                            {estados.map((estado) => (
-                                <option key={estado.sigla} value={estado.sigla}>
-                                    {estado.nome}
+                            value={ufSelecionado}
+                            onChange={(e) => setUfSelecionado(e.target.value)}
+                        ><option value="">Selecione um estado</option>
+                            {uf.map((uf) => (
+                                <option key={uf.sigla} value={uf.sigla}>
+                                    {uf.nome}
                                 </option>
                             ))}
                         </select><br />
                     </div>
-                    <div className='container-products'>
+                    <div className='container-products'> {/*Cidade/Bairro*/}
                         <label htmlFor='cidade'>Cidade</label>
                         <input type='text'
                             className='Cadastro-inputs'
@@ -354,7 +427,7 @@ const Cadastro = () => {
                             value={bairro}
                         /><br />
                     </div>
-                    <div className='container-products'>
+                    <div className='container-products'> {/*Rua/Endereço*/}
                         <label htmlFor='rua'>Rua</label>
                         <input type='text'
                             className='Cadastro-inputs'
@@ -376,11 +449,16 @@ const Cadastro = () => {
                 <p>Pesquisa Social</p>
                 <span></span><br />
                 <div className='container'>{/*Pesquisa social começo*/}
-                    <div className='container-products'>
+                    <div className='container-products'> {/*Escolaridade/CursoSuperior/Emprego*/}
                         <label htmlFor='escolaridade'>Escolaridade*</label>
-                        <select name='escolaridade' id='escolaridade' className='Cadastro-inputs-select'>
+                        <select name='escolaridade'
+                            id='escolaridade'
+                            className='Cadastro-inputs-select'
+                            value={escolaridadesSelecionado}
+                            onChange={(e) => setEscolaridadesSelecionado(e.target.value)}>
+                            <option value="">Selecione uma opção</option>
                             {escolaridades.map((escolaridades) => (
-                                <option key={escolaridades.id} value={escolaridades.id}>
+                                <option key={escolaridades.value} value={escolaridades.value}>
                                     {escolaridades.descricao}
                                 </option>
                             ))}
@@ -405,11 +483,16 @@ const Cadastro = () => {
                             onChange={(e) => setEmprego(e.target.value)}
                         /><br />
                     </div>
-                    <div className='container-products'>
+                    <div className='container-products'> {/*RacaCor/Renda/Moradores*/}
                         <label htmlFor='etnia'>Raça/cor*</label>
-                        <select name='etnia' id='etnia' className='Cadastro-inputs-select'>
+                        <select name='etnia'
+                            id='etnia'
+                            className='Cadastro-inputs-select'
+                            value={racaCorSelecionado}
+                            onChange={(e) => setRacaCorSelecionado(e.target.value)}
+                        ><option value="">Selecione uma opção</option>
                             {racaCor.map((racaCor) => (
-                                <option key={racaCor.id} value={racaCor.id}>
+                                <option key={racaCor.value} value={racaCor.value}>
                                     {racaCor.descricao}
                                 </option>
                             ))}
@@ -431,41 +514,62 @@ const Cadastro = () => {
                             onChange={(e) => setnumeroMoradores(e.target.value)}
                         /><br />
                     </div>
-                    <div className='container-products'>
-                        <label htmlFor='PCD'>Portador de deficiencias*</label>
-                        <select name='PCD' id='PCD' className='Cadastro-inputs-select'>
+                    <div className='container-products'> {/*Pcd?/TipoDefi/Grupo/EstadoCivil*/}
+                        <label htmlFor='PCD'>Portador de deficiencias?*</label>
+                        <select name='PCD'
+                            id='PCD'
+                            className='Cadastro-inputs-select'
+                            value={pcdSelecionado}
+                            onChange={(e) => setPcdSelecionado(e.target.value)}
+                        ><option value="">Selecione uma opção</option>
                             {pcd.map((pcd) => (
-                                <option key={pcd.id} value={pcd.id}>
+                                <option key={pcd.value} value={pcd.value}>
                                     {pcd.descricao}
                                 </option>
                             ))}
                         </select><br />
                         <label htmlFor='tipo-PCD'>Tipo de dificiencia</label>
-                        <select name='tipo-PCD' id='tipo-PCD' className='Cadastro-inputs-select'>
+                        <select name='tipo-PCD'
+                            id='tipo-PCD'
+                            className='Cadastro-inputs-select'
+                            value={deficienciasSelecionado}
+                            onChange={(e) => setDeficienciasSelecionado(e.target.value)}>
+                            <option value="">Selecione uma opção</option>
                             {deficiencias.map((deficiencia) => (
-                                <option key={deficiencia.id} value={deficiencia.id}>
+                                <option key={deficiencia.value} value={deficiencia.value}>
                                     {deficiencia.descricao}
                                 </option>
                             ))}
                         </select><br />
                         <label htmlFor="grupo">Grupo</label>
-                        <select name='grupo' id='grupo' className='Cadastro-inputs-select'>
+                        <select name='grupo'
+                            id='grupo'
+                            className='Cadastro-inputs-select'
+                            value={gruposSelecionado}
+                            onChange={(e) => setGruposSelecionado(e.target.value)}>
+                            <option value="">Selecione uma opção</option>
                             {grupos.map((grupo) => (
-                                <option key={grupo.id} value={grupo.value}>
+                                <option key={grupo.value} value={grupo.value}>
                                     {grupo.descricao}
                                 </option>
                             ))}
                         </select><br />
                         <label htmlFor='estadoCivil'>Estado Civil*</label>
-                        <select name='estadoCivil' id='estadoCivil' className='Cadastro-inputs-select'>
+                        <select name='estadoCivil'
+                            id='estadoCivil'
+                            className='Cadastro-inputs-select'
+                            value={estadosCivilSelecionado}
+                            onChange={(e) => setEstadosCivilSelecionado(e.target.value)}>
+                            <option value="">Selecione uma opção</option>
                             {estadosCivil.map((estado) => (
-                                <option key={estado.id} value={estado.id}>
+                                <option key={estado.value} value={estado.value}>
                                     {estado.descricao}
                                 </option>
                             ))}
                         </select><br />
                     </div>
                 </div>{/*Pesquisa social fim*/}
+                {erro && <div className="erro">{erro}</div>}
                 <div className='btn-enviar'>
                     <button type="submit"
                         className='button-real'
@@ -473,6 +577,15 @@ const Cadastro = () => {
                     >Enviar</button>
                 </div>
             </form>
+
+            {modalOpen && (
+                <div className="modal">
+                    <div className="modal-content">
+                        <span className="close" onClick={closeModal}>&times;</span>
+                        <p>Formulário enviado com sucesso! A página será recarregada em breve.</p>
+                    </div>
+                </div>
+            )}
         </div>
     )
 }
