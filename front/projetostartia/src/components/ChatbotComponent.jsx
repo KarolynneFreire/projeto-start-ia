@@ -7,6 +7,7 @@ import botIcon from '../assets/icone_chatbot.png'; // Importa o ícone do chatbo
 import ActionProvider from './Chatbot/ActionProvider'; // Importa o ActionProvider para lidar com ações
 import MessageParser from './Chatbot/MessageParser'; // Importa o MessageParser para interpretar mensagens
 import config from './Chatbot/Config'; // Configuração do chatbot
+import '../../src/components/Chatbot/Chatbot.css'
 
 function ChatbotComponent() {
   const [isOpen, setIsOpen] = useState(false); // Estado para controlar se o chatbot está aberto ou fechado
@@ -31,7 +32,9 @@ function ChatbotComponent() {
   <div className="chatbot-container">
     <div className="chatbot-header">
       Conversa com Assistente
-      <button className="close-button" onClick={toggleChatbot}>X</button>
+      <button className="close-button-chat" onClick={toggleChatbot}>
+      <span className="close-icon">X</span>
+        </button>
     </div>
     <Chatbot 
       config={config} 

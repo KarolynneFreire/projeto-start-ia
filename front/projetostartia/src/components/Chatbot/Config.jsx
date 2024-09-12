@@ -29,6 +29,9 @@ const config = {
       backgroundColor: "#00B2A9",
     },
   },
+  customComponents: {
+    header: () => null // Remove o header padrão
+  }
 };
 
 export default config;

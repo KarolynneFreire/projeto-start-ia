@@ -23,8 +23,8 @@
 /* Contêiner do chatbot */
 .chatbot-container {
   position: fixed;
-  bottom: 80px;
-  right: 20px;
+  bottom: 40px;
+  right: 10px;
   width: 360px;
   height: 520px;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
@@ -34,13 +34,13 @@
   flex-direction: column;
   z-index: 1001;
   padding: 0;
-  margin: 0;
+  margin: 10;
 }
 
 /* Cabeçalho movível */
 .chatbot-container .chatbot-header {
   cursor: move;
-  background-color: #00B2A9;
+  background-color: rgb(89, 148, 132);
   color: rgb(255, 255, 255);
   padding: 12px;
   font-size: 16px;
@@ -62,7 +62,7 @@
 
 /* Estilos para mensagens */
 .chatbot-container .react-chatbot-kit-chat-bot-message {
-  background-color: #00A9A5;
+  background-color: rgb(89, 148, 132);
   color: white;
   border-radius: 10px;
   padding: 10px;
@@ -105,7 +105,7 @@
 }
 
 .chatbot-container .react-chatbot-kit-chat-input button {
-  background-color: #00B2A9;
+  background-color: rgb(89, 148, 132);
   border: none;
   border-radius: 50%;
   width: 45px;
@@ -143,10 +143,11 @@
 
 .chatbot-container .react-chatbot-kit-chat-message-container::-webkit-scrollbar-thumb {
   background: transparent; /* Especificar fundo transparente */
+  
 }
 
 .chatbot-container .bot-avatar {
-  background-color: #00B2A9;
+  background-color: rgb(89, 148, 132);
   border-radius: 50%;
   width: 30px;
   height: 30px;
@@ -158,7 +159,7 @@
 }
 
 .chatbot-container .user-avatar {
-  background-color: #4A90E2;
+  background-color:rgb(4, 51, 38);
   border-radius: 50%;
   width: 30px;
   height: 30px;
@@ -181,6 +182,7 @@
   width: 60px;
   height: 60px;
   padding: 0;
+  
 }
 
 /* Adjust the icon image to stay within bounds */
@@ -189,4 +191,62 @@
   height: auto;
   border-radius: 50%; /* Keep the circular shape for the icon */
   object-fit: contain;
+  
+}
+
+.close-button-chat {
+  background-color: rgba(4, 51, 38, 0.463);
+  border: none;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: transform 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border-radius: 10px;
+}
+
+.close-button-chat:hover {
+background: rgb(3, 51, 37); 
+color: white;
+border-radius: 50%;
+}
+
+.close-button-chat:active {
+transform: scale(0.95); 
+}
+
+.close-button-chat:focus {
+outline: none;
+}
+
+.close-icon {
+  color: #ffffff;
+  font-size: 10px;
+}
+
+/* Estilização para o botão de envio */
+.react-chatbot-kit-chat-btn-send {
+  background-color: rgb(89, 148, 132) !important;
+
+}
+
+.react-chatbot-kit-chat-btn-send img {
+  width: 100%;
+  height: auto;
+  filter: invert(1); /* Inverte a cor se o ícone for branco */
+}
+
+/* Efeito de clique no botão */
+.react-chatbot-kit-chat-btn-send:active {
+  transform: scale(0.95);
+}
+
+/* Alterar o estilo do ícone, se necessário */
+.react-chatbot-kit-chat-btn-send i {
+  font-size: 24px; /* Aumenta o tamanho do ícone, se estiver usando FontAwesome ou outro ícone baseado em fonte */
+  color: #fff; /* Define a cor do ícone */
 }
