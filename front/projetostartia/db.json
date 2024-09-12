@@ -1,18 +1,466 @@
 {
-    "posts": [
-        {
-            "Cpf": "705.383.214-74",
-            "Nome": "José Edberto",
-            "Rg": "9.738.397",
-            "Cep" : "54756-320",
-            "Vune" : "Não"
-        },
-        {
-            "Cpf": "123.456.789-10",
-            "Nome": "Lob",
-            "Rg": "9.738.397",
-            "Cep" : "54756-320",
-            "Vune" : "Sim"
-        }
-    ]
+  "dados": [
+    {
+      "id": "3317",
+      "nomeCompleto": "teste",
+      "email": "teste",
+      "cpf": "11111111111",
+      "dataNascimento": "2003-10-05",
+      "rg": "1111111",
+      "idade": 20,
+      "faixaEtaria": "20 a 24 anos",
+      "nomeMae": "teste",
+      "telefone": "(11)11111-1111",
+      "cep": "54756320",
+      "cidade": "Camaragibe",
+      "rua": "Rua Amaro Coutinho",
+      "bairro": "Tabatinga",
+      "numeroEndereco": "250",
+      "cursoSuperior": "teste",
+      "renda": "1",
+      "emprego": "teste",
+      "numeroMoradores": "1",
+      "uf": "pe",
+      "sexos": "masculino",
+      "escolaridades": "ensino fundamental incompleto",
+      "racaCor": "preto",
+      "estadosCivil": "solteiro",
+      "deficiencias": "nenhuma",
+      "pcd": "nao",
+      "grupos": "caminhoneiros"
+    }
+  ],
+  "uf": [
+    {
+      "sigla": "ac",
+      "nome": "acre",
+      "value": "a737",
+      "id": "3303"
+    },
+    {
+      "sigla": "aL",
+      "nome": "alagoas",
+      "value": "0cd8",
+      "id": "c3b3"
+    },
+    {
+      "sigla": "aPp",
+      "nome": "amapá",
+      "value": "3474",
+      "id": "809b"
+    },
+    {
+      "sigla": "am",
+      "nome": "amazonas",
+      "value": "6885",
+      "id": "a6fa"
+    },
+    {
+      "sigla": "ba",
+      "nome": "bahia",
+      "value": "61e1",
+      "id": "3f42"
+    },
+    {
+      "sigla": "ce",
+      "nome": "cearz",
+      "value": "6b8f",
+      "id": "42f9"
+    },
+    {
+      "sigla": "df",
+      "nome": "distrito federal",
+      "value": "5485",
+      "id": "3844"
+    },
+    {
+      "sigla": "es",
+      "nome": "espírito santo",
+      "value": "8367",
+      "id": "a842"
+    },
+    {
+      "sigla": "go",
+      "nome": "goias",
+      "value": "f391",
+      "id": "eee7"
+    },
+    {
+      "sigla": "ma",
+      "nome": "maranhao",
+      "value": "8145",
+      "id": "60dd"
+    },
+    {
+      "sigla": "mt",
+      "nome": "mato grosso",
+      "value": "119e",
+      "id": "556d"
+    },
+    {
+      "sigla": "ms",
+      "nome": "mato grosso do sul",
+      "value": "8e71",
+      "id": "581c"
+    },
+    {
+      "sigla": "mg",
+      "nome": "minas gerais",
+      "value": "1662",
+      "id": "1934"
+    },
+    {
+      "sigla": "pa",
+      "nome": "para",
+      "value": "fb7c",
+      "id": "2128"
+    },
+    {
+      "sigla": "pb",
+      "nome": "paraiba",
+      "value": "57eb",
+      "id": "6cfb"
+    },
+    {
+      "sigla": "pr",
+      "nome": "parana",
+      "value": "6e64",
+      "id": "d3d8"
+    },
+    {
+      "sigla": "pe",
+      "nome": "pernambuco",
+      "value": "ba5f",
+      "id": "595e"
+    },
+    {
+      "sigla": "pi",
+      "nome": "piaui",
+      "value": "00de",
+      "id": "54d4"
+    },
+    {
+      "sigla": "rj",
+      "nome": "rio de janeiro",
+      "value": "2776",
+      "id": "984f"
+    },
+    {
+      "sigla": "rn",
+      "nome": "rio grande do norte",
+      "value": "ddbf",
+      "id": "fb99"
+    },
+    {
+      "sigla": "rs",
+      "nome": "rio grande do sul",
+      "value": "d7e8",
+      "id": "4aee"
+    },
+    {
+      "sigla": "ro",
+      "nome": "rondonia",
+      "value": "217d",
+      "id": "a232"
+    },
+    {
+      "sigla": "rr",
+      "nome": "roraima",
+      "value": "5cd0",
+      "id": "623b"
+    },
+    {
+      "sigla": "sc",
+      "nome": "santa catarina",
+      "value": "3c26",
+      "id": "d09c"
+    },
+    {
+      "sigla": "sp",
+      "nome": "sao paulo",
+      "value": "7343",
+      "id": "06fd"
+    },
+    {
+      "sigla": "se",
+      "nome": "sergipe",
+      "value": "9b54",
+      "id": "f3f3"
+    },
+    {
+      "sigla": "to",
+      "nome": "tocantins",
+      "value": "565d",
+      "id": "b461"
+    }
+  ],
+  "sexos": [
+    {
+      "value": "feminino",
+      "descricao": "Feminino",
+      "id": "bbc2"
+    },
+    {
+      "value": "masculino",
+      "descricao": "Masculino",
+      "id": "eb61"
+    },
+    {
+      "value": "outro",
+      "descricao": "Outro",
+      "id": "6697"
+    },
+    {
+      "value": "prefironaodizer",
+      "descricao": "Prefiro não dizer",
+      "id": "3345"
+    }
+  ],
+  "escolaridades": [
+    {
+      "value": "ensino fundamental incompleto",
+      "descricao": "Ensino Fundamental Incompleto",
+      "id": "5bc0"
+    },
+    {
+      "value": "ensino fundamental completo",
+      "descricao": "Ensino Fundamental Completo",
+      "id": "0af6"
+    },
+    {
+      "value": "ensino medio incompleto",
+      "descricao": "Ensino Médio Incompleto",
+      "id": "c8c4"
+    },
+    {
+      "value": "ensino medio completo",
+      "descricao": "Ensino Médio Completo",
+      "id": "363f"
+    },
+    {
+      "value": "curso tecnico / tecnologo",
+      "descricao": "Técnico/Profissionalizante",
+      "id": "3ec1"
+    },
+    {
+      "value": "ensino superior incompleto",
+      "descricao": "Superior Incompleto",
+      "id": "6779"
+    },
+    {
+      "value": "ensino superior completo",
+      "descricao": "Superior Completo",
+      "id": "26ce"
+    }
+  ],
+  "racaCor": [
+    {
+      "value": "preto",
+      "descricao": "Preto",
+      "id": "ab72"
+    },
+    {
+      "value": "pardo",
+      "descricao": "Pardo",
+      "id": "3c95"
+    },
+    {
+      "value": "branco",
+      "descricao": "Branco",
+      "id": "dc70"
+    },
+    {
+      "value": "indigena",
+      "descricao": "Indígena",
+      "id": "8e05"
+    },
+    {
+      "value": "amarelo",
+      "descricao": "amarelo",
+      "id": "aa25"
+    }
+  ],
+  "pcd": [
+    {
+      "value": "sim",
+      "descricao": "Não",
+      "id": "1092"
+    },
+    {
+      "value": "nao",
+      "descricao": "Sim",
+      "id": "7a19"
+    }
+  ],
+  "deficiencias": [
+    {
+      "value": "nenhuma",
+      "descricao": "Nenhuma",
+      "id": "46b2"
+    },
+    {
+      "value": "deficiencia fisica",
+      "descricao": "Deficiência Física",
+      "id": "d580"
+    },
+    {
+      "value": "deficiencia auditiva",
+      "descricao": "Deficiência auditiva",
+      "id": "b2bb"
+    },
+    {
+      "value": "deficiencia visual",
+      "descricao": "Deficiência Visual",
+      "id": "d48c"
+    },
+    {
+      "value": "deficiencia intelectual",
+      "descricao": "Deficiência Intelectual",
+      "id": "1f70"
+    },
+    {
+      "value": "deficiência psicossocial",
+      "descricao": "Deficiência Psicossocial",
+      "id": "e091"
+    },
+    {
+      "value": "deficiência multipla",
+      "descricao": "Deficiência Múltipla",
+      "id": "6361"
+    },
+    {
+      "value": "outras deficiências",
+      "descricao": "Outras Deficiências",
+      "id": "5cb4"
+    }
+  ],
+  "grupos": [
+    {
+      "value": "caminhoneiros",
+      "descricao": "Caminhoneiros",
+      "id": "9920"
+    },
+    {
+      "value": "gestantes e puerperas",
+      "descricao": "Gestantes e puérperas",
+      "id": "4885"
+    },
+    {
+      "value": "gestantes e puerperas nao residentes em recife",
+      "descricao": "Gestantes e puérperas não residentes de Recife",
+      "id": "2a7f"
+    },
+    {
+      "value": "idosos",
+      "descricao": "Idosos",
+      "id": "a7e4"
+    },
+    {
+      "value": "publico em geral (18 a 59 anos)",
+      "descricao": "Público em geral",
+      "id": "2213"
+    },
+    {
+      "value": "pessoas com comorbidades",
+      "descricao": "Pessoa com comorbidades",
+      "id": "14ad"
+    },
+    {
+      "value": "pessoas com viagem para exterior (estudo/pesquisa/trabalho/tratamento de saude)",
+      "descricao": "Pessoa com viagem para o exterior",
+      "id": "5ecb"
+    },
+    {
+      "value": "pessoas em situacao de rua",
+      "descricao": "Pessoa em situação de rua",
+      "id": "b954"
+    },
+    {
+      "value": "sesau-busca-atv",
+      "descricao": "Sesau - Busca ativa",
+      "id": "80bf"
+    },
+    {
+      "value": "trabalhadores da assistencia social",
+      "descricao": "Trabalhadores da assistência Social",
+      "id": "cba7"
+    },
+    {
+      "value": "trabalhadores da educacao",
+      "descricao": "Trabalhadores da Educação",
+      "id": "79f0"
+    },
+    {
+      "value": "trabalhadores da limpeza urbana",
+      "descricao": "Trabalhadores da limpeza urbana",
+      "id": "66cb"
+    },
+    {
+      "value": "trabalhadores da saude",
+      "descricao": "Trabalhadores da saúde",
+      "id": "a9d0"
+    },
+    {
+      "value": "trabalhadores de transporte aereo",
+      "descricao": "Trabalhadores de transporte aéreo",
+      "id": "0738"
+    },
+    {
+      "value": "trabalhadores de transporte aquaviario",
+      "descricao": "Trabalhadores de transporte aquaviário",
+      "id": "99c6"
+    },
+    {
+      "value": "trabalhadores de transporte coletivo rodoviario",
+      "descricao": "Trabalhadores de transporte rodoviário",
+      "id": "81b3"
+    },
+    {
+      "value": "trabalhadores de transporte metroviario e ferroviario",
+      "descricao": "Trabalhadores de transporte metroviário e ferroviário",
+      "id": "1bfa"
+    },
+    {
+      "value": "trabalhadores industriais e bancarios",
+      "descricao": "Trabalhadores industriais e bancários",
+      "id": "90ee"
+    },
+    {
+      "value": "trabalhadores portuarios",
+      "descricao": "Trabalhadores portuários",
+      "id": "4307"
+    },
+    {
+      "value": "outras prioridades",
+      "descricao": "Outros",
+      "id": "3571"
+    },
+    {
+      "value": "outras prioridades",
+      "descricao": "Outras Prioridades",
+      "id": "800c"
+    }
+  ],
+  "estadosCivil": [
+    {
+      "value": "solteiro",
+      "descricao": "Solteiro(a)",
+      "id": "291b"
+    },
+    {
+      "value": "casado",
+      "descricao": "Casado(a)",
+      "id": "6dbf"
+    },
+    {
+      "value": "divorciado",
+      "descricao": "Divorciado(a)",
+      "id": "6039"
+    },
+    {
+      "value": "viuvo",
+      "descricao": "Viúvo(a)",
+      "id": "08c1"
+    }
+  ]
 }

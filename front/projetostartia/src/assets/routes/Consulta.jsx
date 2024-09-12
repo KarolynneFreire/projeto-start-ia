@@ -3,14 +3,13 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 import '../css/Consulta.css'
-import UserCard from './../../components/UserCard/UserCard';
 
 function Consulta() {
 
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:4000/posts')
+    axios.get('http://127.0.0.1:8000/v1/api/usuarios/?skip=0&limit=100')
 
       .then(response => {
         setPosts(response.data);
@@ -23,7 +22,6 @@ function Consulta() {
 
   return (
     <div>
-      <UserCard></UserCard>
       <div className='consulta-pesquisa'>
         <input type="search" id='nome' className='input-pesquisa' />
         <input type="search" name="" id="" className='input-pesquisa' />
@@ -31,25 +29,20 @@ function Consulta() {
         <input type="search" name="" id="" className='input-pesquisa' />
         <input type="search" name="" id="" className='input-pesquisa' />
       </div>
-      <div>
+      <div className="user-container">
         {posts.map(post => (
-          <div key={post.Nome} className='dados-pessoa'>
-            <button className='btn-pessoa'>
-              <h2>{post.Cpf}</h2>
-              <h2>|</h2>
-              <p>{post.Nome}</p>
-              <h2>|</h2>
-              <p>{post.Rg}</p>
-              <h2>|</h2>
-              <p>{post.Cep}</p>
-              <h2>|</h2>
-              <p>{post.Vune}</p>
-            </button>
-          </div>
+          <button key={post.id} className='btn-pessoa'>
+            <h2>{post.nomeCompleto}</h2>
+            <p><strong>CPF:</strong> {post.cpf}</p>
+            <p><strong>Email:</strong> {post.email}</p>
+            <p className={`status ${post.isVulneravel ? 'vulneravel' : 'nao-vulneravel'}`} >
+              <strong>Situação:</strong> <div className='div-vul'>{post.isVulneravel ? 'Vulnerabilidade' : 'Não Vulnerável'}</div>
+            </p>
+          </button>
         ))}
       </div>
     </div>
-    );
+  );
 }
 
 export default Consulta;
