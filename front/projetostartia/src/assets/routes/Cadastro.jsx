@@ -207,6 +207,7 @@ const Cadastro = () => {
     }, []);
 
     const handleSubmit = async (e) => {
+        console.log('teste')
         e.preventDefault();
         if (nomeCompleto && dataNascimento && email && cpf && rg) {
             const dados = {
@@ -219,7 +220,6 @@ const Cadastro = () => {
             } catch (error) {
                 console.error('error', error);
             }
-
         } else {
             console.log('Por favor, preencha todos os campos obrigatórios.')
         }
