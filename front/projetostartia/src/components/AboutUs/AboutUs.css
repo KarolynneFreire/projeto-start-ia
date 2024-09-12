@@ -1,0 +1,142 @@
+.aboutUs{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+
+@media (max-width: 768px) {
+    .aboutUs {
+        flex-direction: column;
+    }
+}
+
+.about{
+    background: url(https://hilab.com.br/wp-content/uploads/2021/03/Dengue-idosos-Hilab.jpg) no-repeat left;
+    background-size: 60%;
+    overflow: hidden;
+    padding: 100px 0;
+}
+
+.inner-select{
+    width: 30%;
+    height: 70px;
+    float: right;
+    padding: 144px;
+    box-shadow: 10px 10px 8px rgb(0, 0, 0, 0.3);
+}
+.inner-select h1{
+    margin-bottom: 30px;
+    margin-top: -80px;
+    font-size: 30px;
+    font-weight: 900px;
+    color: rgb(4, 59, 45);
+}
+.text{
+    font-size: 13px;
+    color: rgb(4, 59, 45);
+    line-height: 30px;
+    text-align: justify;
+    margin-bottom: 40px;
+}
+
+.skill button{
+    font-size: 22px;
+    text-align: center;
+    letter-spacing: 2px;
+    border-radius: 10px;
+    border: none;
+    padding: 8px;
+    width: 200px;
+    background-color: aliceblue;
+    cursor: pointer;
+    margin-top: -30px;
+}
+
+.skill button:hover{
+    transition: 1s;
+    background-color: aqua;
+}
+
+@media (max-width: 1200px) {
+    .about {
+        background-size: 80%; 
+    }
+    .inner-select {
+        width: 50%; 
+    }
+}
+
+@media (max-width: 796px) {
+    .skill button {
+        margin-top: -45px;
+    }
+}
+
+@media (max-width: 769px) {
+    .about {
+        background-size: 100%; 
+        padding: 50px 0; 
+    }
+    .inner-select {
+        width: 80%;
+        padding: 50px 20px; 
+    }
+    .skill button {
+        margin-top: -15px;
+    }
+    .about {
+        background-image: none; 
+    }
+    .inner-select{
+        box-shadow: none; 
+    }
+}
+
+@media (max-width: 768px) {
+    .skill button {
+        width: 100%; 
+        font-size: 18px; 
+        padding: 10px 0; 
+        margin-top: -10px; 
+    }
+}
+
+.skill {
+    display: flex;
+    justify-content: center; 
+}
+
+@media (max-width: 768px) {
+    .skill {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.skill button {
+    box-sizing: border-box; 
+}
+
+@media (max-width: 778px) {
+    .skill button {
+    margin-top: -30px; 
+    }
+}
+
+@media (max-width: 766px) {
+    .aboutUs{
+        margin-top: -100px ;
+        margin-left: -30px;
+    }
+
+    .text{
+        margin-top: -15px;
+    }
+    .skill button {
+    margin-top: -40px; 
+    }
+}
+    
+
