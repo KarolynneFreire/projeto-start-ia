@@ -28,19 +28,20 @@ function ChatbotComponent() {
       {/* Contêiner do chatbot que pode ser arrastado pela tela */}
       {isOpen && (
         <Draggable>
-          <div id="chatbot-container" className="chatbot-container">
-            <div className="chatbot-header">
-              Conversa com Assistente
-              <button className="close-button" onClick={toggleChatbot}>X</button>
-            </div>
-            <Chatbot 
-              config={config} 
-              messageParser={MessageParser} 
-              actionProvider={ActionProvider}
-              placeholderText="Digite sua mensagem aqui..." 
-            />
-          </div>
-        </Draggable>
+  <div className="chatbot-container">
+    <div className="chatbot-header">
+      Conversa com Assistente
+      <button className="close-button" onClick={toggleChatbot}>X</button>
+    </div>
+    <Chatbot 
+      config={config} 
+      messageParser={MessageParser} 
+      actionProvider={ActionProvider}
+      placeholderText="Digite sua mensagem aqui..." 
+    />
+  </div>
+</Draggable>
+
       )}
     </div>
   );
