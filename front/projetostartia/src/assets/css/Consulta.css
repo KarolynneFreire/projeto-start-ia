@@ -8,11 +8,6 @@
   align-items: baseline;
 }
 
-.Consulta-title{
-  display: flex;
-  justify-content: center;
-}
-
 .input-pesquisa {
   height: 5vh;
   width: 15vw;
@@ -33,29 +28,6 @@
 #nome {
   width: 25vw;
 }
-
-
-/* .dados-pessoa {
-    margin: 2vw;
-    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
-    border-radius: 15px;
-    border: 2px solid #00000094;
-    background: tomato;
-    padding: 1vh;
-}
-
-.btn-pessoa {
-    cursor: pointer;
-    border: none;
-    display: flex;
-    align-items: baseline;
-    background: inherit; /* Herda a cor de fundo de .dados-pessoa 
-    }
-
-.btn-pessoa h2, .btn-pessoa p {
-    background: transparent; /* Remove qualquer fundo adicional, se necessário 
-} */
-
 
 /* Container principal */
 .user-container {
@@ -150,9 +122,7 @@
   white-space: nowrap; 
 }
 
-
-
-    
-
-
-
+.Consulta-title{
+  display: flex;
+  justify-content: center;
+}

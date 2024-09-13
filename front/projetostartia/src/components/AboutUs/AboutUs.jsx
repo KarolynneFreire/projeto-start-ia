@@ -1,20 +1,19 @@
 import React from 'react';
-import './AboutUs.css';  // Certifique-se de ter o caminho correto para o arquivo CSS
+import './AboutUs.css'; 
 
 const AboutUs = () => {
     return (
         <div className='aboutUs'>
             <div className="about">
             <div className="inner-select">
-                <h1>AboutUs</h1>
+                <h1>Vulnerabilidade Social</h1>
                 <p className='text'>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur excepturi officiis eum, 
-                    deleniti iure ipsum a perspiciatis aperiam error fuga soluta quasi sit nulla necessitatibus nisi
-                     tempora vel laudantium sint!
+                “O termo vulnerabilidade social refere-se à situação socioeconômica de grupos de pessoas com poucos recursos financeiros, de moradia,
+                 educação e acesso a oportunidades para seu desenvolvimento enquanto cidadão” (Sermais)
                 </p>
-                <div className="skill">
+                {/* <div className="skill">
                     <button>leia</button>
-                </div>
+                </div> */}
             </div>
         </div>
         </div>

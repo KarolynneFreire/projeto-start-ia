@@ -1,8 +1,9 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import ChatbotComponent from './components/ChatbotComponent'
 import './App.css';
-import Navbar from './components/Navbar/Navbar';
+import Navbar from './components/Navbar/Navbar.jsx';
+import Footer from './components/Footer/Footer';
+import ChatbotComponent from './components/ChatbotComponent.jsx'; // Caminho corrigido
 
 function App() {
   return (
@@ -10,7 +11,9 @@ function App() {
       <Navbar />
       {/* O componente Home será renderizado pela rota, então remova-o daqui */}
       <Outlet /> {/* Isso renderiza as rotas filhas (Home, Cadastro, Consulta, etc.) */}
-      <ChatbotComponent /> {/* O ChatbotComponent deve estar dentro do ChatbotProvider */}
+      {/* <ChatBot flow={flow} /> */}
+      <Footer></Footer>
+      <ChatbotComponent />
     </div>
 
   );

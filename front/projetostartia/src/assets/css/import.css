@@ -1,0 +1,116 @@
+.importCsv {
+    padding: 20px;
+    display: grid;
+    justify-content: center;
+}
+
+.tabela-box {
+    overflow: scroll;
+    width: 95vw;
+    height: 60vh;
+}
+
+.txt-import {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.importTabela {
+    border-collapse: collapse;
+}
+
+.importTabela th,
+.importTabela td {
+    border: 1px solid #aaaaaa;
+    padding: 8px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* Adiciona reticências para texto longo */
+    white-space: nowrap;
+    /* Impede que o texto se quebre */
+}
+
+.importTabela th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.importTabela tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.importTabela tr:hover {
+    background-color: #f1f1f1;
+}
+
+@media (max-width: 768px) {
+
+    .importTabela th,
+    .importTabela td {
+        display: block;
+        width: 100%;
+    }
+
+    .importTabela thead {
+        display: none;
+    }
+
+    .importTabela tr {
+        margin-bottom: 10px;
+        display: block;
+    }
+
+    .importTabela td {
+        text-align: right;
+        position: relative;
+        padding-left: 50%;
+        white-space: normal;
+    }
+
+    .importTabela td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-right: 10px;
+        white-space: nowrap;
+        font-weight: bold;
+        text-align: left;
+    }
+}
+
+.btn-import {
+    margin: 0vh 0vh 2vh 0vh;
+    padding: 1.5vh;
+    background: rgb(89, 148, 132);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.2s ease;
+}
+
+.btn-import:active {
+    transform: translateY(4px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.btn-import:hover {
+    background: rgb(4, 59, 45);
+}
+
+.btn-import:focus {
+    outline: none;
+    /* Remove a borda padrão de foco */
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+    /* Brilho ao redor no foco */
+}
+
+.arqv-import {
+    display: flex;
+    align-items: center;
+}

@@ -123,7 +123,7 @@ function Consulta() {
         <button type="submit">Buscar</button>
       </form>
       <div className="user-container">
-        {posts.map(post => (
+        {filteredPosts.map(post => (
           <button key={post.id} className='btn-pessoa'>
             <h2>{post.nomeCompleto}</h2>
             <p><strong>CPF:</strong> {post.cpf}</p>
@@ -135,7 +135,7 @@ function Consulta() {
         ))}
         {!hasMore && <p>Não há mais usuários para carregar.</p>}
       </div>
-    </div>
+    </div >
   );
 }
 

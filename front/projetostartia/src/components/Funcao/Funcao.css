@@ -9,8 +9,8 @@
 
 .card {
   background-color: white;
-  border-radius: 15px; /* Arredondando o card completo */
-  overflow: hidden; /* Garante que o conteúdo extra não ultrapasse as bordas arredondadas */
+  border-radius: 15px; 
+  overflow: hidden;
   width: 250px;
   text-align: center;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
@@ -21,12 +21,12 @@
 
 .card-header {
   
-  color: rgb(89, 148, 132); /* O número ficará branco */
+  color: rgb(89, 148, 132);
   padding: 20px 0;
   font-size: 2.5rem;
-  border-top-left-radius: 15px; /* Arredonda o topo esquerdo */
-  border-top-right-radius: 15px; /* Arredonda o topo direito */
-  text-align: center; /* Centraliza o número */
+  border-top-left-radius: 15px; 
+  border-top-right-radius: 15px; 
+  text-align: center; 
   
 }
 
@@ -35,7 +35,7 @@
 }
 
 .card:hover {
-  transform: translateY(-10px); /* Efeito hover */
+  transform: translateY(-10px); 
 }
 
 .card-body {
@@ -48,22 +48,6 @@
   margin-bottom: 20px;
 }
 
-.card-body button {
-  padding: 10px 20px;
-  background-color: #FFA500; /* Botão com a mesma cor do topo */
-  border: none;
-  border-radius: 50px;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.card-body button:hover {
-  background-color: #e69500; /* Cor mais escura ao passar o mouse */
-}
-
-/* Responsividade */
 @media (max-width: 768px) {
   .cards-container {
     flex-direction: column;
