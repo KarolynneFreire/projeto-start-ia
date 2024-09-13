@@ -236,7 +236,7 @@ const Cadastro = () => {
             const faixaEtaria = determinarFaixaEtaria(idade);
             const cpfApenasNumeros = cpf.replace(/\D/g, '');
             const rgApenasnumeros = rg.replace(/\D/g, '');
-            const cepApenasNumeros = parseInt(cep.replace(/\D/g, ''), 10);
+
             const numeroEnderecoNumeros = parseInt(numeroEndereco);
             const rendaPfloat = parseFloat(renda);
             const numeroMoradoresNumeros = parseInt(numeroMoradores);
@@ -253,7 +253,7 @@ const Cadastro = () => {
                 idade,
                 nomeMae,
                 telefone,
-                cep: cepApenasNumeros,
+                cep,
                 cidade,
                 rua,
                 uf: ufSelecionado,

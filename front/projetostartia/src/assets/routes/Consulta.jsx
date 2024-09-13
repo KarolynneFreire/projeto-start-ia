@@ -17,7 +17,7 @@ function Consulta() {
   });
 
   useEffect(() => {
-    axios.get('http://localhost:4000/dados')
+    axios.get('http://127.0.0.1:8000/v1/api/usuarios/?skip=0&limit=100')
 
       .then(response => {
         setPosts(response.data);
