@@ -1,25 +1,35 @@
 .importCsv {
     padding: 20px;
-    max-width: 100%;
-    box-sizing: border-box;
+    display: grid;
+    justify-content: center;
+}
+
+.tabela-box {
+    overflow: scroll;
+    width: 95vw;
+    height: 60vh;
+}
+
+.txt-import {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .importTabela {
-    width: 100%;
     border-collapse: collapse;
-    table-layout: fixed; /* Garante que a tabela use largura fixa */
 }
 
-.importTabela th, .importTabela td {
-    border: 1px solid #ddd;
+.importTabela th,
+.importTabela td {
+    border: 1px solid #aaaaaa;
     padding: 8px;
-    text-align: left;
+    text-align: center;
     overflow: hidden;
-    text-overflow: ellipsis; /* Adiciona reticências para texto longo */
-    white-space: nowrap; /* Impede que o texto se quebre */
+    text-overflow: ellipsis;
+    /* Adiciona reticências para texto longo */
+    white-space: nowrap;
+    /* Impede que o texto se quebre */
 }
 
 .importTabela th {
@@ -36,7 +46,9 @@
 }
 
 @media (max-width: 768px) {
-    .importTabela th, .importTabela td {
+
+    .importTabela th,
+    .importTabela td {
         display: block;
         width: 100%;
     }
@@ -67,4 +79,38 @@
         font-weight: bold;
         text-align: left;
     }
+}
+
+.btn-import {
+    margin: 0vh 0vh 2vh 0vh;
+    padding: 1.5vh;
+    background: rgb(89, 148, 132);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.2s ease;
+}
+
+.btn-import:active {
+    transform: translateY(4px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.btn-import:hover {
+    background: rgb(4, 59, 45);
+}
+
+.btn-import:focus {
+    outline: none;
+    /* Remove a borda padrão de foco */
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+    /* Brilho ao redor no foco */
+}
+
+.arqv-import {
+    display: flex;
+    align-items: center;
 }

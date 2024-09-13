@@ -10,6 +10,7 @@ import ErrorPage from './assets/routes/Error.jsx';
 import Cadastro from './assets/routes/Cadastro.jsx';
 import Consulta from './assets/routes/Consulta.jsx';
 import Import from './assets/routes/import.jsx';
+import Dados from './assets/routes/Dados.jsx';
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
       {
         path: "/start-projeto/import",
         element: <Import />,
+      },
+      {
+        path: "/start-projeto/dados",
+        element: <Dados />,
       },
     ],
   },

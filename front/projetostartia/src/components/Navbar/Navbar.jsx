@@ -15,7 +15,7 @@ const Navbar = () => {
             <li><Link to="/start-projeto/cadastro" className='Nav-div-link'>Cadastro</Link></li>
             <li><Link to="/start-projeto/import" className='Nav-div-link'>Importação</Link></li>
             <li><Link to="/start-projeto/consulta" className='Nav-div-link'>Consulta</Link></li>
-            <li><Link to="" className='Nav-div-link'>Dados</Link></li>
+            <li><Link to="/start-projeto/dados" className='Nav-div-link'>Dados</Link></li>
             <div className='Nav-div'>
               <p>|</p>
               <button className='Nav-button-fontsize'>A-</button>
