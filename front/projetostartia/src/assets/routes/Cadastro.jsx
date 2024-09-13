@@ -274,7 +274,7 @@ const Cadastro = () => {
 
             // const jsonString = JSON.stringify(dados);
             try {
-                const response = await axios.post('http://localhost:4000/dados', dados);
+                const response = await axios.post('http://127.0.0.1:8000/v1/api/usuarios/', dados);
                 console.log('sucesso', response.data)
                 setMensagemSucesso('Formulário enviado com sucesso!');
 

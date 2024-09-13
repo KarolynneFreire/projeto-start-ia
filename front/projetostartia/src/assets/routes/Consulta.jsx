@@ -8,20 +8,20 @@ function Consulta() {
   const [hasMore, setHasMore] = useState(true); // Indicador de mais dados
   const [pesquisa, setPesquisa] = useState({
     nome: '',
-    email: '',
     cpf: '',
-    cidade: '',
-    bairro: '',
     isVulneravel: ''
   });
 
   const fetchPosts = useCallback(async () => {
     try {
-      let url;
+      let url = `http://127.0.0.1:8000/v1/api/usuarios/?skip=${(page - 1) * 100}&limit=100`;
+
       if (pesquisa.nome) {
         url = `http://127.0.0.1:8000/v1/api/usuarios/buscarusuarios/${encodeURIComponent(pesquisa.nome)}?skip=${(page - 1) * 100}&limit=100`;
-      } else {
-        url = `http://127.0.0.1:8000/v1/api/usuarios/?skip=${(page - 1) * 100}&limit=100`;
+      }
+
+      if (pesquisa.cpf) {
+        url = `http://127.0.0.1:8000/v1/api/usuarios/buscarusuarioscpf/${encodeURIComponent(pesquisa.cpf)}?skip=${(page - 1) * 100}&limit=100`;
       }
 
       console.log('Fetching URL:', url); // Log da URL para depuração
@@ -37,21 +37,11 @@ function Consulta() {
     } catch (error) {
       console.error('Fetch error:', error); // Log do erro para depuração
     }
-  }, [page, pesquisa.nome]);
+  }, [page, pesquisa.nome, pesquisa.cpf]);
 
   useEffect(() => {
     fetchPosts();
   }, [fetchPosts]);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.innerHeight + document.documentElement.scrollTop !== document.documentElement.offsetHeight || !hasMore) return;
-      setPage(prevPage => prevPage + 1);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [hasMore]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -68,8 +58,8 @@ function Consulta() {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSearchSubmit}>
+    <div className="consulta-container">
+      <form onSubmit={handleSearchSubmit} className="search-form">
         <input
           type="text"
           name="nome"
@@ -80,34 +70,10 @@ function Consulta() {
         />
         <input
           type="text"
-          name="email"
-          value={pesquisa.email}
-          onChange={handleChange}
-          placeholder="Pesquisar email..."
-          className="search-input"
-        />
-        <input
-          type="text"
           name="cpf"
           value={pesquisa.cpf}
           onChange={handleChange}
           placeholder="Pesquisar CPF..."
-          className="search-input"
-        />
-        <input
-          type="text"
-          name="cidade"
-          value={pesquisa.cidade}
-          onChange={handleChange}
-          placeholder="Pesquisar cidade..."
-          className="search-input"
-        />
-        <input
-          type="text"
-          name="bairro"
-          value={pesquisa.bairro}
-          onChange={handleChange}
-          placeholder="Pesquisar bairro..."
           className="search-input"
         />
         <select
@@ -120,22 +86,23 @@ function Consulta() {
           <option value="sim">Vulnerável</option>
           <option value="não">Não Vulnerável</option>
         </select>
-        <button type="submit">Buscar</button>
+        <button type="submit" className="search-button">Buscar</button>
       </form>
+
       <div className="user-container">
-        {filteredPosts.map(post => (
+        {posts.map(post => (
           <button key={post.id} className='btn-pessoa'>
             <h2>{post.nomeCompleto}</h2>
             <p><strong>CPF:</strong> {post.cpf}</p>
             <p><strong>Email:</strong> {post.email}</p>
-            <p className={`status ${post.isVulneravel ? 'vulneravel' : 'nao-vulneravel'}`} >
-              <strong>Situação:</strong> <div className='div-vul'>{post.isVulneravel ? 'Vulnerabilidade' : 'Não Vulnerável'}</div>
+            <p className={`status ${post.isVulneravel ? 'vulneravel' : 'nao-vulneravel'}`}>
+              <strong>Situação:</strong> <span>{post.isVulneravel ? 'Vulnerável' : 'Não Vulnerável'}</span>
             </p>
           </button>
         ))}
         {!hasMore && <p>Não há mais usuários para carregar.</p>}
       </div>
-    </div >
+    </div>
   );
 }
 
