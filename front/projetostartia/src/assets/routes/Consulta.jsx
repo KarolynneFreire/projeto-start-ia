@@ -51,6 +51,23 @@ function Consulta() {
     fetchPosts();
   }, [fetchPosts]);
 
+  // Efeito para adicionar o event listener de rolagem
+  useEffect(() => {
+    const handleScroll = () => {
+      // Verifica se o usuário chegou ao final da página
+      if (window.innerHeight + document.documentElement.scrollTop === document.documentElement.offsetHeight) {
+        if (hasMore) {
+          setPage(prevPage => prevPage + 1);
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    // Remove o event listener ao desmontar o componente
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [hasMore]);
+
   // Atualiza o estado com os valores dos campos de pesquisa
   const handleChange = (e) => {
     const { name, value } = e.target;
