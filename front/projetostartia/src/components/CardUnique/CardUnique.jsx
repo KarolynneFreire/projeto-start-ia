@@ -1,5 +1,5 @@
 import React from 'react';
-import './CardUnique.css'; // Estilos atualizados com nomes únicos
+import './CardUnique.css'; 
 
 const CardUnique = () => {
   return (

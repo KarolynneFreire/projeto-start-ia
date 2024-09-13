@@ -42,8 +42,8 @@
 
 /* Estilo dos botões */
 .btn-pessoa {
-  background-color: rgba(89, 148, 132, 0.57);
-  color: black;
+  background-color: white;
+  color: rgb(4, 51, 38);
   border: none;
   padding: 2rem;
   border-radius: 8px;
@@ -52,13 +52,13 @@
   flex-direction: column;
   align-items: flex-start;
   width: 100%; /* A largura será ajustada de acordo com o espaço disponível */
-  border: 1px solid rgb(89, 148, 132);
   text-align: left;
   transition: background-color 0.3s ease, transform 0.3s ease;
   box-sizing: border-box; /* Inclui padding e border no cálculo da largura */
   backdrop-filter: blur(15px); 
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3); 
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+
 }
 
 /* Ajustar a largura dos botões para se adaptarem ao container */
@@ -85,29 +85,29 @@
 /* Estilo do texto em negrito dentro do botão */
 .btn-pessoa strong {
   background-color: initial;
-  color: #020200; /* Dourado para destaque */
+  color: rgb(4, 51, 38); /* Dourado para destaque */
 }
 
 /* Efeito de hover no botão */
 .btn-pessoa:hover {
-  background-color: rgb(4, 51, 38);
+  background-color: rgba(89, 148, 132, 0.433);
   transform: scale(1.05); /* Efeito leve de zoom */
-  color: rgb(255, 255, 255);
+  color: black;
 }
 
 /* Estilos para Vulnerável */
 .vulneravel {
-  color: #cb2020a4;
+  color: #cb2020;
 }
 
 /* Estilos para Não Vulnerável */
 .nao-vulneravel {
-  color: #248529bf; /* Cor do texto */
+  color: #248529; /* Cor do texto */
 }
 
 /* Estilo do background para .vulneravel */
 .vulneravel .div-vul {
-  background-color: #CB202033; 
+  background-color: #cb20207e; 
   padding: 0.3rem; 
   border-radius: 4px;
   display: inline-block; 
@@ -115,7 +115,7 @@
 
 /* Estilo do background para .nao-vulneravel */
 .nao-vulneravel .div-vul {
-  background-color: #24852933; 
+  background-color: #24852964; 
   padding: 0.3rem; 
   border-radius: 4px;
   display: inline-block; 
