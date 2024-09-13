@@ -13,9 +13,9 @@ const Navbar = () => {
           <div className='Nav-div'>
             <li><Link to="/" className='Nav-div-link'>Início</Link></li>
             <li><Link to="/start-projeto/cadastro" className='Nav-div-link'>Cadastro</Link></li>
+            <li><Link to="/start-projeto/import" className='Nav-div-link'>Importação</Link></li>
             <li><Link to="/start-projeto/consulta" className='Nav-div-link'>Consulta</Link></li>
             <li><Link to="" className='Nav-div-link'>Dados</Link></li>
-            <li><Link to="/start-projeto/acessibilidade" className='Nav-div-link'>Acessibilidade</Link></li>
             <div className='Nav-div'>
               <p>|</p>
               <button className='Nav-button-fontsize'>A-</button>

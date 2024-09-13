@@ -1,11 +1,11 @@
 .consulta-pesquisa {
   display: flex;
-  justify-content: flex-start;
-  align-items: center; /* Alinha verticalmente os itens no centro */
-  margin: 0 auto; /* Centraliza horizontalmente */
-  padding: 0 20px; /* Adiciona espaçamento lateral semelhante ao .user-container */
-  box-sizing: border-box; /* Inclui padding no cálculo da largura */
-  width: 90%; /* Garante a mesma largura do container dos usuários */
+  margin: 4vh 3vw;
+  padding: 0 25px;
+  box-sizing: border-box;
+  width: 95%;
+  justify-content: center;
+  align-items: baseline;
 }
 
 .input-pesquisa {
@@ -20,8 +20,8 @@
   width: 15vw;
   border: 3px solid rgba(194, 133, 12, 1);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-  border-radius: 4px;
-  margin-left: 1vw;
+  border-radius: 8px;
+  margin: 0px 1vw;
   margin-top: 2vh;
 }
 
@@ -145,9 +145,7 @@
   white-space: nowrap; 
 }
 
-
-
-    
-
-
-
+.Consulta-title{
+  display: flex;
+  justify-content: center;
+}

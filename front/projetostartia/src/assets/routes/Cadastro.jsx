@@ -39,9 +39,8 @@ const Cadastro = () => {
     const [emprego, setEmprego] = useState('');
     const [renda, setRenda] = useState('');
     const [numeroMoradores, setnumeroMoradores] = useState('');
-    const [modalOpen, setModalOpen] = useState(false);
     const [erro, setErro] = useState('');
-
+    const [mensagemSucesso, setMensagemSucesso] = useState('');
 
     const cidade = user.city
     const bairro = user.neighborhood
@@ -237,12 +236,12 @@ const Cadastro = () => {
             const faixaEtaria = determinarFaixaEtaria(idade);
             const cpfApenasNumeros = cpf.replace(/\D/g, '');
             const rgApenasnumeros = rg.replace(/\D/g, '');
-            const cepApenasNumeros = parseInt(cep.replace(/\D/g, ''), 10); 
+            const cepApenasNumeros = parseInt(cep.replace(/\D/g, ''), 10);
             const numeroEnderecoNumeros = parseInt(numeroEndereco);
             const rendaPfloat = parseFloat(renda);
             const numeroMoradoresNumeros = parseInt(numeroMoradores);
-            
-            
+
+
 
             const dados = {
                 nomeCompleto,
@@ -272,18 +271,16 @@ const Cadastro = () => {
                 numeroMoradores: numeroMoradoresNumeros,
                 grupo: gruposSelecionado // Correspondente a "grupo"
             };
-            
+
             // const jsonString = JSON.stringify(dados);
             try {
-                const response = await axios.post('http://127.0.0.1:8000/v1/api/usuarios/', dados);
+                const response = await axios.post('http://localhost:4000/dados', dados);
                 console.log('sucesso', response.data)
-
-                setModalOpen(true);
-
+                setMensagemSucesso('Formulário enviado com sucesso!');
 
                 setTimeout(() => {
                     window.location.reload();
-                }, 3000);
+                }, 2000);
 
             } catch (error) {
                 console.error('error', error);
@@ -291,10 +288,6 @@ const Cadastro = () => {
         } else {
             setErro('Por favor, preencha todos os campos obrigatórios, marcados com *');
         }
-    };
-
-    const closeModal = () => {
-        setModalOpen(false);
     };
 
     return (
@@ -577,6 +570,7 @@ const Cadastro = () => {
                     </div>
                 </div>{/*Pesquisa social fim*/}
                 {erro && <div className="erro">{erro}</div>}
+                {mensagemSucesso && (<div className="sucesso">{mensagemSucesso}</div>)}
                 <div className='btn-enviar'>
                     <button type="submit"
                         className='button-real'
@@ -584,15 +578,6 @@ const Cadastro = () => {
                     >Enviar</button>
                 </div>
             </form>
-
-            {modalOpen && (
-                <div className="modal">
-                    <div className="modal-content">
-                        <span className="close" onClick={closeModal}>&times;</span>
-                        <p>Formulário enviado com sucesso! A página será recarregada em breve.</p>
-                    </div>
-                </div>
-            )}
         </div>
     )
 }
