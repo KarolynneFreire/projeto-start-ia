@@ -12,6 +12,7 @@ function Consulta() {
     isVulneravel: ''
   });
 
+  // Função para buscar os usuários com base na pesquisa
   const fetchPosts = useCallback(async () => {
     try {
       let url = `http://127.0.0.1:8000/v1/api/usuarios/?skip=${(page - 1) * 100}&limit=100`;
@@ -22,6 +23,12 @@ function Consulta() {
 
       if (pesquisa.cpf) {
         url = `http://127.0.0.1:8000/v1/api/usuarios/buscarusuarioscpf/${encodeURIComponent(pesquisa.cpf)}?skip=${(page - 1) * 100}&limit=100`;
+      }
+
+      if (pesquisa.isVulneravel === 'sim') {
+        url = `http://127.0.0.1:8000/v1/api/usuarios/filtro/vulneraveis?skip=${(page - 1) * 100}&limit=100`;
+      } else if (pesquisa.isVulneravel === 'não') {
+        url = `http://127.0.0.1:8000/v1/api/usuarios/filtro/nao-vulneraveis?skip=${(page - 1) * 100}&limit=100`;
       }
 
       console.log('Fetching URL:', url); // Log da URL para depuração
@@ -37,12 +44,14 @@ function Consulta() {
     } catch (error) {
       console.error('Fetch error:', error); // Log do erro para depuração
     }
-  }, [page, pesquisa.nome, pesquisa.cpf]);
+  }, [page, pesquisa.nome, pesquisa.cpf, pesquisa.isVulneravel]);
 
+  // Efeito para buscar dados ao carregar a página ou ao fazer pesquisa
   useEffect(() => {
     fetchPosts();
   }, [fetchPosts]);
 
+  // Atualiza o estado com os valores dos campos de pesquisa
   const handleChange = (e) => {
     const { name, value } = e.target;
     setPesquisa(prevPesquisa => ({
@@ -51,9 +60,10 @@ function Consulta() {
     }));
   };
 
+  // Executa a pesquisa ao submeter o formulário
   const handleSearchSubmit = (e) => {
     e.preventDefault();
-    setPage(1); // Resetar a página para 1 quando a consulta de pesquisa mudar
+    setPage(1); // Reseta a página para 1 quando a consulta de pesquisa mudar
     fetchPosts(); // Buscar posts com a nova consulta de pesquisa
   };
 
