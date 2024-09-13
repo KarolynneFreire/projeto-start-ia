@@ -49,6 +49,13 @@
   background: none;
 }
 
+.banner-btn{
+  display: flex;
+  height: 9vh;
+  background: rgba(255, 255, 255, 0); /* Reduz a opacidade para deixar mais transparente */
+}
+
+/* Estilo básico do botão com efeito de vidro */
 .button-real {
   background: rgb(89, 148, 132); 
   color: white; 

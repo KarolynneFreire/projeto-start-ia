@@ -1,38 +1,153 @@
 .consulta-pesquisa {
-    display: flex;
-    justify-content: flex-start;
-    margin-left: 3vw;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center; /* Alinha verticalmente os itens no centro */
+  margin: 0 auto; /* Centraliza horizontalmente */
+  padding: 0 20px; /* Adiciona espaçamento lateral semelhante ao .user-container */
+  box-sizing: border-box; /* Inclui padding no cálculo da largura */
+  width: 90%; /* Garante a mesma largura do container dos usuários */
 }
 
 .input-pesquisa {
-    height: 5vh;
-    width: 15vw;
-    border: 3px solid rgba(194, 133, 12, 1);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-    border-radius: 4px;
-    margin-left: 1vw;
-    margin-top: 2vh;
+  height: 5vh;
+  width: 15vw;
+  border: 3px solid rgba(194, 133, 12, 1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  margin-left: 1vw;
+  margin-top: 2vh;
+  height: 5vh;
+  width: 15vw;
+  border: 3px solid rgba(194, 133, 12, 1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  margin-left: 1vw;
+  margin-top: 2vh;
 }
 
 #nome {
-    width: 25vw;
+  width: 25vw;
 }
 
-.dados-pessoa {
+
+/* .dados-pessoa {
     margin: 2vw;
     box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
     border-radius: 15px;
     border: 2px solid #00000094;
+    background: tomato;
     padding: 1vh;
 }
-
 
 .btn-pessoa {
     cursor: pointer;
     border: none;
     display: flex;
     align-items: baseline;
+    background: inherit; /* Herda a cor de fundo de .dados-pessoa 
+    }
+
+.btn-pessoa h2, .btn-pessoa p {
+    background: transparent; /* Remove qualquer fundo adicional, se necessário 
+} */
+
+
+/* Container principal */
+.user-container {
+  margin: 20px auto; /* Margem superior/inferior e centralizado horizontalmente */
+  display: flex;
+  flex-wrap: wrap; /* Permite que os itens se movam para a linha de baixo quando não há espaço suficiente */
+  gap: 2vh; /* Espaçamento entre os botões */
+  padding: 0 40px; /* Espaçamento lateral */
+  box-sizing: border-box; /* Inclui padding e border no cálculo da largura */
+  width: 90%; /* Garante que ocupe toda a largura disponível até max-width */
 }
 
-.btn-pessoa h2{
+/* Estilo dos botões */
+.btn-pessoa {
+  background-color: white;
+  color: rgb(4, 51, 38);
+  border: none;
+  padding: 2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%; /* A largura será ajustada de acordo com o espaço disponível */
+  text-align: left;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-sizing: border-box; /* Inclui padding e border no cálculo da largura */
+  backdrop-filter: blur(15px); 
+  border: 1px solid rgba(255, 255, 255, 0.3); 
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+
 }
+
+/* Ajustar a largura dos botões para se adaptarem ao container */
+.btn-pessoa {
+  flex: 1 1 calc(33.333% - 2vh); /* Ajuste a porcentagem conforme necessário para o layout desejado */
+  max-width: calc(33.333% - 2vh); /* Ajuste a porcentagem conforme necessário para o layout desejado */
+}
+
+/* Estilo do cabeçalho dentro do botão */
+.btn-pessoa h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background-color: initial;
+}
+
+/* Estilo dos parágrafos dentro do botão */
+.btn-pessoa p {
+  margin: 0;
+  background-color: initial;
+  font-size: 1.1rem;
+}
+
+/* Estilo do texto em negrito dentro do botão */
+.btn-pessoa strong {
+  background-color: initial;
+  color: rgb(4, 51, 38); /* Dourado para destaque */
+}
+
+/* Efeito de hover no botão */
+.btn-pessoa:hover {
+  background-color: rgba(89, 148, 132, 0.433);
+  transform: scale(1.05); /* Efeito leve de zoom */
+  color: black;
+}
+
+/* Estilos para Vulnerável */
+.vulneravel {
+  color: #cb2020;
+}
+
+/* Estilos para Não Vulnerável */
+.nao-vulneravel {
+  color: #248529; /* Cor do texto */
+}
+
+/* Estilo do background para .vulneravel */
+.vulneravel .div-vul {
+  background-color: #cb20207e; 
+  padding: 0.3rem; 
+  border-radius: 4px;
+  display: inline-block; 
+}
+
+/* Estilo do background para .nao-vulneravel */
+.nao-vulneravel .div-vul {
+  background-color: #24852964; 
+  padding: 0.3rem; 
+  border-radius: 4px;
+  display: inline-block; 
+  white-space: nowrap; 
+}
+
+
+
+    
+
+
+

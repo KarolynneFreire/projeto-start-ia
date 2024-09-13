@@ -4,7 +4,7 @@ import ChangingProgressProvider from './ChangingProgressProvider.js';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import axios from 'axios';
-import '../../components/UserCard/UserCard.css'
+import './UserCard.css'
 
 function UserCard({ nome, idade }) {
   const [showModal, setShowModal] = useState(false);
