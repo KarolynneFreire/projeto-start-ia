@@ -9,7 +9,7 @@ import Home from './assets/routes/Home.jsx'
 import ErrorPage from './assets/routes/Error.jsx';
 import Cadastro from './assets/routes/Cadastro.jsx';
 import Consulta from './assets/routes/Consulta.jsx';
-import Import from './assets/routes/import.jsx';
+import Import from './assets/routes/Import.jsx';
 import Dados from './assets/routes/Dados.jsx';
 
 const router = createBrowserRouter([
