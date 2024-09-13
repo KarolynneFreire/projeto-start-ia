@@ -1,40 +1,111 @@
+/* Container principal */
 .importCsv {
     padding: 20px;
-    display: grid;
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%; /* Ampliado para ocupar mais largura da página */
+    max-width: 1200px; /* Largura máxima */
+    margin: auto;
 }
 
-.tabela-box {
-    overflow: scroll;
-    width: 95vw;
-    height: 60vh;
+/* Título */
+.header {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #333;
 }
 
-.txt-import {
+/* Container para upload e botão */
+.upload-container {
+    width: 100%;
+    max-width: 600px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+/* Estilo do input de arquivo */
+.file-input {
+    display: none;
+}
+
+/* Estilo do label associado ao input */
+.file-label {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #28a745; /* Cor verde */
+    border: 1px solid #28a745; /* Cor verde */
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.file-label:hover {
+    background-color: #218838; /* Tom mais escuro de verde */
+    border-color: #218838; /* Tom mais escuro de verde */
+}
+
+/* Estilo do botão */
+.btn-import {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background: #28a745; /* Cor verde */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.2s;
+    margin-bottom: 20px;
+}
+
+.btn-import:hover {
+    background: #218838; /* Tom mais escuro de verde */
+}
+
+.btn-import:active {
+    transform: translateY(2px);
+}
+
+/* Container da tabela */
+.table-container {
+    width: 100%;
+    overflow-x: auto; /* Adiciona rolagem horizontal quando necessário */
+}
+
+/* Estilo da tabela */
 .importTabela {
+    width: 100%;
+    min-width: 1200px; /* Largura mínima para acomodar mais colunas */
     border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: block;
+    max-height: 400px; /* Define a altura máxima da tabela para mostrar no máximo 10 linhas */
+    overflow-y: auto; /* Adiciona rolagem vertical quando necessário */
 }
 
 .importTabela th,
 .importTabela td {
-    border: 1px solid #aaaaaa;
-    padding: 8px;
-    text-align: center;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    /* Adiciona reticências para texto longo */
-    white-space: nowrap;
-    /* Impede que o texto se quebre */
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+    white-space: nowrap; /* Impede a quebra de linha dentro das células */
 }
 
 .importTabela th {
-    background-color: #f4f4f4;
-    font-weight: bold;
+    background-color: #28a745; /* Cor verde */
+    color: #fff;
+    font-weight: 600;
 }
 
 .importTabela tr:nth-child(even) {
@@ -46,7 +117,6 @@
 }
 
 @media (max-width: 768px) {
-
     .importTabela th,
     .importTabela td {
         display: block;
@@ -79,38 +149,4 @@
         font-weight: bold;
         text-align: left;
     }
-}
-
-.btn-import {
-    margin: 0vh 0vh 2vh 0vh;
-    padding: 1.5vh;
-    background: rgb(89, 148, 132);
-    color: white;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 8px;
-    cursor: pointer;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.2s ease;
-}
-
-.btn-import:active {
-    transform: translateY(4px);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-}
-
-.btn-import:hover {
-    background: rgb(4, 59, 45);
-}
-
-.btn-import:focus {
-    outline: none;
-    /* Remove a borda padrão de foco */
-    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
-    /* Brilho ao redor no foco */
-}
-
-.arqv-import {
-    display: flex;
-    align-items: center;
 }
