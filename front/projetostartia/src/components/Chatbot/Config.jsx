@@ -1,6 +1,7 @@
 import { createChatBotMessage } from 'react-chatbot-kit';
 import ButtonWidget from './ButtonWidget';
 import FaqWidget from './FaqWidget';
+import UploadCsvWidget from './UploadCsvWidget';
 
 const botName = 'Assistente';
 
@@ -19,6 +20,10 @@ const config = {
     {
       widgetName: "faq",
       widgetFunc: (props) => <FaqWidget {...props} />,
+    },
+    {
+      widgetName: "uploadCsv",
+      widgetFunc: (props) => <UploadCsvWidget {...props} />,
     },
   ],
   customStyles: {
